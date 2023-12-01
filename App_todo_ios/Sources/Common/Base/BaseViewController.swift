@@ -18,4 +18,8 @@ class BaseViewController: UIViewController {
     func bindDatas() {}
     func setupUi() {}
     
+    func setNavigationBar(title: String) {
+        self.navigationItem.title = title
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+    }
 }

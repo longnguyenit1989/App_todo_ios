@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomePrimaryTextField: UITextField {
+class CustomPrimaryTextField: UITextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()

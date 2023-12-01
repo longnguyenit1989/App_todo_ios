@@ -8,17 +8,17 @@
 import UIKit
 
 class SignInViewController: BaseViewController {
-
+    
     @IBOutlet weak var signInButton: CustomPrimaryButtton!
-    @IBOutlet weak var emailTextField: CustomePrimaryTextField!
-    @IBOutlet weak var passwordTextField: CustomePrimaryTextField!
+    @IBOutlet weak var emailTextField: CustomPrimaryTextField!
+    @IBOutlet weak var passwordTextField: CustomPrimaryTextField!
     @IBOutlet weak var signUpLabel: UILabel!
     @IBOutlet weak var forgotPassLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func setupUi() {
         super.setupUi()
         setUiAndClickSignUpLabel()
@@ -50,8 +50,8 @@ class SignInViewController: BaseViewController {
     }
     
     @objc func signInButtonTapped() {
-        print("Sign in")
+        let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
+        UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
+        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
     }
-    
 }
-

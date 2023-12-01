@@ -10,8 +10,8 @@ import UIKit
 
 class SignUpViewController: BaseViewController {
     @IBOutlet weak var confirmPasswordTextField: UILabel!
-    @IBOutlet weak var emailTextField: CustomePrimaryTextField!
-    @IBOutlet weak var passwordTextField: CustomePrimaryTextField!
+    @IBOutlet weak var emailTextField: CustomPrimaryTextField!
+    @IBOutlet weak var passwordTextField: CustomPrimaryTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
     }
