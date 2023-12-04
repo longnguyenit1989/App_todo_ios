@@ -6,6 +6,7 @@ target 'App_todo_ios' do
   use_frameworks!
 
   pod 'Floaty', '~> 4.2.0'
+  pod 'MPInjector'
 
 
   # Pods for App_todo_ios

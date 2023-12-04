@@ -1,16 +1,20 @@
 PODS:
   - Floaty (4.2.0)
+  - MPInjector (1.0.6)
 
 DEPENDENCIES:
   - Floaty (~> 4.2.0)
+  - MPInjector
 
 SPEC REPOS:
   trunk:
     - Floaty
+    - MPInjector
 
 SPEC CHECKSUMS:
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
+  MPInjector: be65d3b7c5edab35bdb618258a886cda44c1caef
 
-PODFILE CHECKSUM: 3f2e953626d05471a9e72212008cdd8a415b7e57
+PODFILE CHECKSUM: 04e0e90339e9267dab7bd3fcb75418b5dfa5c01c
 
 COCOAPODS: 1.14.3

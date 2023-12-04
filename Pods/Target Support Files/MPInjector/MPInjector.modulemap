@@ -1,0 +1,6 @@
+framework module MPInjector {
+  umbrella header "MPInjector-umbrella.h"
+
+  export *
+  module * { export * }
+}

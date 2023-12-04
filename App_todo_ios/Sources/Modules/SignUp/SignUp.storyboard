@@ -22,6 +22,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN UP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gai-IR-W7A" userLabel="Sign Up Label">
                                         <rect key="frame" x="0.0" y="50" width="358" height="48"/>
+                                        <color key="tintColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="V8F-4D-HGM"/>
                                         </constraints>
@@ -65,8 +66,8 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdu-1C-NJV" userLabel="Confirm Password Label">
-                                        <rect key="frame" x="0.0" y="314" width="337" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdu-1C-NJV" userLabel="Confirm Password Label">
+                                        <rect key="frame" x="0.0" y="314" width="358" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Mqi-tt-Oze"/>
                                             <constraint firstAttribute="height" constant="30" id="qV6-Uh-IDh"/>
@@ -105,6 +106,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Sdu-1C-NJV" secondAttribute="trailing" id="3Jj-ey-Si5"/>
                                     <constraint firstItem="zlz-hI-Egq" firstAttribute="leading" secondItem="GCD-lO-sbH" secondAttribute="leading" id="7VP-u2-yA8"/>
                                     <constraint firstItem="zlz-hI-Egq" firstAttribute="top" secondItem="Gai-IR-W7A" secondAttribute="bottom" constant="30" id="8iE-fU-3BJ"/>
                                     <constraint firstItem="pPH-8P-Yt0" firstAttribute="top" secondItem="k9N-rm-z06" secondAttribute="bottom" constant="30" id="DIK-cN-skN"/>
@@ -114,6 +116,7 @@
                                     <constraint firstItem="k9N-rm-z06" firstAttribute="leading" secondItem="GCD-lO-sbH" secondAttribute="leading" id="N3c-de-7RB"/>
                                     <constraint firstItem="76k-ZN-Sh5" firstAttribute="top" secondItem="Z3N-2X-ldS" secondAttribute="bottom" constant="5" id="N4e-Bb-QA0"/>
                                     <constraint firstItem="Gai-IR-W7A" firstAttribute="leading" secondItem="GCD-lO-sbH" secondAttribute="leading" id="NLc-aw-bfa"/>
+                                    <constraint firstItem="Sdu-1C-NJV" firstAttribute="leading" secondItem="GCD-lO-sbH" secondAttribute="leading" id="OIY-Y4-Zwf"/>
                                     <constraint firstItem="76k-ZN-Sh5" firstAttribute="leading" secondItem="GCD-lO-sbH" secondAttribute="leading" id="TxO-WW-oXR"/>
                                     <constraint firstItem="Z3N-2X-ldS" firstAttribute="leading" secondItem="GCD-lO-sbH" secondAttribute="leading" id="W3C-Gy-ZKc"/>
                                     <constraint firstItem="C3e-LC-c9E" firstAttribute="leading" secondItem="GCD-lO-sbH" secondAttribute="leading" id="WL1-S1-WXi"/>

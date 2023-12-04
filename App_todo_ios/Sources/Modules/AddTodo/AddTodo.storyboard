@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Todo View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddTodoViewController" id="Y6W-OH-hqX" customClass="AddTodoViewController" customModule="App_todo_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zhq-Ow-mKX">
+                                <rect key="frame" x="28" y="59" width="337" height="759"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzK-7n-oDU" userLabel="Title Label">
+                                        <rect key="frame" x="0.0" y="30" width="337" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="H2B-za-Hv2"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Nr4-SI-ucO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRG-Hr-4rj" userLabel="Title Text Field" customClass="CustomPrimaryTextField" customModule="App_todo_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="65" width="337" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="aAB-fO-oVj"/>
+                                            <constraint firstAttribute="height" constant="48" id="n6a-MT-his"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3c-mp-c19" userLabel="Content Label">
+                                        <rect key="frame" x="0.0" y="123" width="337" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="06P-QN-uoJ"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="E1K-ma-BL1"/>
+                                            <constraint firstAttribute="height" constant="30" id="rYp-Au-dVO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Content" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="no1-Sm-akA" userLabel="Content Text Field" customClass="CustomPrimaryTextField" customModule="App_todo_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="163" width="337" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="AxB-Ko-avi"/>
+                                            <constraint firstAttribute="height" constant="48" id="oBk-tO-OLc"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="48" id="xI6-S5-sZF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoO-jQ-wfe" userLabel="Add Button" customClass="CustomPrimaryButtton" customModule="App_todo_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="251" width="337" height="48"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="4PF-5c-dec"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zoO-jQ-wfe" firstAttribute="leading" secondItem="Zhq-Ow-mKX" secondAttribute="leading" id="4JJ-7T-bSf"/>
+                                    <constraint firstItem="A3c-mp-c19" firstAttribute="leading" secondItem="Zhq-Ow-mKX" secondAttribute="leading" id="7bz-1L-YdE"/>
+                                    <constraint firstItem="BzK-7n-oDU" firstAttribute="top" secondItem="Zhq-Ow-mKX" secondAttribute="top" constant="30" id="7zf-S6-ng0"/>
+                                    <constraint firstItem="BzK-7n-oDU" firstAttribute="leading" secondItem="Zhq-Ow-mKX" secondAttribute="leading" id="QcW-O6-vyr"/>
+                                    <constraint firstAttribute="trailing" secondItem="no1-Sm-akA" secondAttribute="trailing" id="QyJ-hA-vM4"/>
+                                    <constraint firstAttribute="trailing" secondItem="cRG-Hr-4rj" secondAttribute="trailing" id="RrL-35-ta2"/>
+                                    <constraint firstItem="cRG-Hr-4rj" firstAttribute="leading" secondItem="Zhq-Ow-mKX" secondAttribute="leading" id="SBe-Xs-p0g"/>
+                                    <constraint firstItem="zoO-jQ-wfe" firstAttribute="top" secondItem="no1-Sm-akA" secondAttribute="bottom" constant="40" id="SqV-9l-XZZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="A3c-mp-c19" secondAttribute="trailing" id="XYw-sj-Nql"/>
+                                    <constraint firstItem="A3c-mp-c19" firstAttribute="top" secondItem="cRG-Hr-4rj" secondAttribute="bottom" constant="10" id="beZ-K6-P3N"/>
+                                    <constraint firstAttribute="trailing" secondItem="BzK-7n-oDU" secondAttribute="trailing" id="fvG-R6-SVR"/>
+                                    <constraint firstAttribute="trailing" secondItem="zoO-jQ-wfe" secondAttribute="trailing" id="mIo-td-gyV"/>
+                                    <constraint firstItem="no1-Sm-akA" firstAttribute="leading" secondItem="Zhq-Ow-mKX" secondAttribute="leading" id="tH6-Va-oi5"/>
+                                    <constraint firstItem="no1-Sm-akA" firstAttribute="top" secondItem="A3c-mp-c19" secondAttribute="bottom" constant="10" id="x1n-Xb-0ku"/>
+                                    <constraint firstItem="cRG-Hr-4rj" firstAttribute="top" secondItem="BzK-7n-oDU" secondAttribute="bottom" constant="5" id="zb6-rC-3Sb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zhq-Ow-mKX" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="SGv-J4-fOs"/>
+                            <constraint firstItem="Zhq-Ow-mKX" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="h1Z-eV-xSk"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Zhq-Ow-mKX" secondAttribute="bottom" id="lhD-R3-Qm4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zhq-Ow-mKX" secondAttribute="trailing" constant="28" id="pIV-L6-ePZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="zoO-jQ-wfe" id="8Lk-dh-v2w"/>
+                        <outlet property="contentTextField" destination="no1-Sm-akA" id="f6Z-IT-Nen"/>
+                        <outlet property="titleTextField" destination="cRG-Hr-4rj" id="XlZ-le-Gnj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

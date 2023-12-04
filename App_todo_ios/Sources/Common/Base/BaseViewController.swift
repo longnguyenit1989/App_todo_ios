@@ -20,6 +20,6 @@ class BaseViewController: UIViewController {
     
     func setNavigationBar(title: String) {
         self.navigationItem.title = title
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: view.tintColor ?? UIColor.systemBlue]
     }
 }

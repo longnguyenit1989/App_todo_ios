@@ -7,6 +7,7 @@
 
 import UIKit
 import Floaty
+import MPInjector
 
 class HomeViewController: BaseViewController {
     @IBOutlet weak var completedCollectionView: UICollectionView!
@@ -14,6 +15,8 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var completedStackView: UIStackView!
     @IBOutlet weak var arrowImaview: UIImageView!
+    
+    @Inject var homeViewModel: HomeViewModel
     
     var isShowCompletedTask = true
     
@@ -31,7 +34,7 @@ class HomeViewController: BaseViewController {
     func addFloatingButton() {
         let floaty = Floaty()
         floaty.plusColor = UIColor.white
-        floaty.buttonColor = UIColor.systemBlue
+        floaty.buttonColor = view.tintColor
         
         let tapFloatingGesture = UITapGestureRecognizer(target: self, action: #selector(floatingButtonTapped))
         floaty.isUserInteractionEnabled = true
@@ -46,7 +49,14 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func floatingButtonTapped() {
-        print("floatingButtonTapped")
+        let addTodoVC = UIStoryboard(name: "AddTodo", bundle: .main).instantiateViewController(withIdentifier: "AddTodoViewController") as! AddTodoViewController
+        
+        addTodoVC.addTodoCallBackCompletion = { todo in
+            self.navigationController?.popViewController(animated: true)
+            print("todo: \(String(describing: todo))")
+        }
+        
+        navigationController?.pushViewController(addTodoVC, animated: true)
     }
     
     @objc func completedStackViewTapped() {

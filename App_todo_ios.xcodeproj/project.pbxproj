@@ -24,8 +24,15 @@
 		FB3A37BD2B18713900C9FD29 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3A37BC2B18713900C9FD29 /* SignUp.storyboard */; };
 		FB3A37BF2B18765A00C9FD29 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A37BE2B18765A00C9FD29 /* SignUpViewController.swift */; };
 		FB3A37C22B19850000C9FD29 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3A37C12B19850000C9FD29 /* Home.storyboard */; };
-		FB3A37C42B19851D00C9FD29 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A37C32B19851D00C9FD29 /* Home.swift */; };
+		FB3A37C42B19851D00C9FD29 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A37C32B19851D00C9FD29 /* HomeViewController.swift */; };
 		FB3A37C72B198E3D00C9FD29 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A37C62B198E3D00C9FD29 /* UIApplication+Extension.swift */; };
+		FBA72C752B1DAC68002C7A14 /* AddTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */; };
+		FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */; };
+		FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C7A2B1DB868002C7A14 /* Todo.swift */; };
+		FBA72C7E2B1DC7CC002C7A14 /* AppInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C7D2B1DC7CC002C7A14 /* AppInjector.swift */; };
+		FBA72C802B1DC854002C7A14 /* AddTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C7F2B1DC854002C7A14 /* AddTodoViewModel.swift */; };
+		FBA72C822B1DD13B002C7A14 /* Time+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C812B1DD13B002C7A14 /* Time+Extension.swift */; };
+		FBA72C842B1DD216002C7A14 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C832B1DD216002C7A14 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +80,15 @@
 		FB3A37BC2B18713900C9FD29 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		FB3A37BE2B18765A00C9FD29 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		FB3A37C12B19850000C9FD29 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		FB3A37C32B19851D00C9FD29 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		FB3A37C32B19851D00C9FD29 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FB3A37C62B198E3D00C9FD29 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTodo.storyboard; sourceTree = "<group>"; };
+		FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
+		FBA72C7A2B1DB868002C7A14 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		FBA72C7D2B1DC7CC002C7A14 /* AppInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInjector.swift; sourceTree = "<group>"; };
+		FBA72C7F2B1DC854002C7A14 /* AddTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewModel.swift; sourceTree = "<group>"; };
+		FBA72C812B1DD13B002C7A14 /* Time+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Time+Extension.swift"; sourceTree = "<group>"; };
+		FBA72C832B1DD216002C7A14 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +129,6 @@
 				62DC527DAD6A5405B650B507 /* Pods-App_todo_iosTests.debug.xcconfig */,
 				BA9507948BC0E590684BDD6B /* Pods-App_todo_iosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -183,6 +196,8 @@
 		FB3A37AA2B1825C300C9FD29 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FBA72C7C2B1DC78A002C7A14 /* Application */,
+				FBA72C782B1DB7FF002C7A14 /* Data */,
 				FB3A37C52B198DE600C9FD29 /* Extensions */,
 				FB3A37B22B18349800C9FD29 /* Common */,
 				FB3A37AC2B1826CF00C9FD29 /* Modules */,
@@ -202,6 +217,7 @@
 		FB3A37AC2B1826CF00C9FD29 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FBA72C732B1DAC49002C7A14 /* AddTodo */,
 				FB3A37C02B1984EF00C9FD29 /* Home */,
 				FB3A37BB2B186EB700C9FD29 /* SignUp */,
 				FB3A37AB2B1825D300C9FD29 /* SignIn */,
@@ -248,7 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				FB3A37C12B19850000C9FD29 /* Home.storyboard */,
-				FB3A37C32B19851D00C9FD29 /* Home.swift */,
+				FB3A37C32B19851D00C9FD29 /* HomeViewController.swift */,
+				FBA72C832B1DD216002C7A14 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -257,8 +274,43 @@
 			isa = PBXGroup;
 			children = (
 				FB3A37C62B198E3D00C9FD29 /* UIApplication+Extension.swift */,
+				FBA72C812B1DD13B002C7A14 /* Time+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBA72C732B1DAC49002C7A14 /* AddTodo */ = {
+			isa = PBXGroup;
+			children = (
+				FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */,
+				FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */,
+				FBA72C7F2B1DC854002C7A14 /* AddTodoViewModel.swift */,
+			);
+			path = AddTodo;
+			sourceTree = "<group>";
+		};
+		FBA72C782B1DB7FF002C7A14 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FBA72C792B1DB81F002C7A14 /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FBA72C792B1DB81F002C7A14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FBA72C7A2B1DB868002C7A14 /* Todo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FBA72C7C2B1DC78A002C7A14 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FBA72C7D2B1DC7CC002C7A14 /* AppInjector.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +424,7 @@
 			files = (
 				FB3A37872B15D48800C9FD29 /* LaunchScreen.storyboard in Resources */,
 				FB3A37C22B19850000C9FD29 /* Home.storyboard in Resources */,
+				FBA72C752B1DAC68002C7A14 /* AddTodo.storyboard in Resources */,
 				FB3A37BD2B18713900C9FD29 /* SignUp.storyboard in Resources */,
 				FB3A37842B15D48800C9FD29 /* Assets.xcassets in Resources */,
 				FB3A37822B15D48600C9FD29 /* SignIn.storyboard in Resources */,
@@ -503,13 +556,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB3A37BA2B1841B100C9FD29 /* CustomPrimaryTextField.swift in Sources */,
+				FBA72C822B1DD13B002C7A14 /* Time+Extension.swift in Sources */,
 				FB3A37BF2B18765A00C9FD29 /* SignUpViewController.swift in Sources */,
 				FB3A37C72B198E3D00C9FD29 /* UIApplication+Extension.swift in Sources */,
 				FB3A377F2B15D48600C9FD29 /* SignInViewController.swift in Sources */,
+				FBA72C802B1DC854002C7A14 /* AddTodoViewModel.swift in Sources */,
+				FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */,
 				FB3A37B82B183E3200C9FD29 /* CustomPrimaryButtton.swift in Sources */,
+				FBA72C7E2B1DC7CC002C7A14 /* AppInjector.swift in Sources */,
+				FBA72C842B1DD216002C7A14 /* HomeViewModel.swift in Sources */,
 				FB3A37B52B1834CD00C9FD29 /* BaseViewController.swift in Sources */,
 				FB3A377B2B15D48600C9FD29 /* AppDelegate.swift in Sources */,
-				FB3A37C42B19851D00C9FD29 /* Home.swift in Sources */,
+				FB3A37C42B19851D00C9FD29 /* HomeViewController.swift in Sources */,
+				FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
