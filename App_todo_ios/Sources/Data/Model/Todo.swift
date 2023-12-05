@@ -12,12 +12,12 @@ struct Todo: Codable {
     var title: String
     var content: String
     
-//    enum CodingKeys: String, CodingKey {
-//        case id, title, content
-//        case id = "id"
-//        case title = "title"
-//        case content = "content"
-//    }
+    //    enum CodingKeys: String, CodingKey {
+    //        case id, title, content
+    //        case id = "id"
+    //        case title = "title"
+    //        case content = "content"
+    //    }
     
     init(_ id: Int64,_ title: String,_ content: String) {
         self.id = id

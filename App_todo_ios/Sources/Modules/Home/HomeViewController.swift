@@ -10,11 +10,8 @@ import Floaty
 import MPInjector
 
 class HomeViewController: BaseViewController {
-    @IBOutlet weak var completedCollectionView: UICollectionView!
-    @IBOutlet weak var taskCollectionView: UICollectionView!
     
-    @IBOutlet weak var completedStackView: UIStackView!
-    @IBOutlet weak var arrowImaview: UIImageView!
+    @IBOutlet weak var taskCollectionView: UICollectionView!
     
     @Inject var homeViewModel: HomeViewModel
     
@@ -22,13 +19,33 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setClickCompletedStackView()
-        addFloatingButton()
     }
     
     override func setupUi() {
+        addFloatingButton()
+        
         setNavigationBar(title: "HOME")
+        setTaskCollectionView()
+    }
+    
+    func setTaskCollectionView() {
+        taskCollectionView.dataSource = self
+        taskCollectionView.delegate = self
+        let nib = UINib(nibName: "TaskTodoCellCollectionViewCell", bundle: .main)
+        taskCollectionView.register(nib, forCellWithReuseIdentifier: "TaskTodoCellCollectionViewCell")
+    }
+    
+    @objc func floatingAddButtonTapped() {
+        let addTodoVC = UIStoryboard(name: "AddTodo", bundle: .main).instantiateViewController(withIdentifier: "AddTodoViewController") as! AddTodoViewController
+        
+        addTodoVC.addTodoCallBackCompletion = { [self] todo in
+            if(todo != nil) {
+                self.navigationController?.popViewController(animated: true)
+                self.homeViewModel.todoArray.append(todo!)
+                self.taskCollectionView.reloadData()
+            }
+        }
+        navigationController?.pushViewController(addTodoVC, animated: true)
     }
     
     func addFloatingButton() {
@@ -36,37 +53,29 @@ class HomeViewController: BaseViewController {
         floaty.plusColor = UIColor.white
         floaty.buttonColor = view.tintColor
         
-        let tapFloatingGesture = UITapGestureRecognizer(target: self, action: #selector(floatingButtonTapped))
+        let tapFloatingGesture = UITapGestureRecognizer(target: self, action: #selector(floatingAddButtonTapped))
         floaty.isUserInteractionEnabled = true
         floaty.addGestureRecognizer(tapFloatingGesture)
         self.view.addSubview(floaty)
     }
-    
-    func setClickCompletedStackView() {
-        let completedStackViewGesture = UITapGestureRecognizer(target: self, action: #selector(completedStackViewTapped))
-        completedStackView.isUserInteractionEnabled = true
-        completedStackView.addGestureRecognizer(completedStackViewGesture)
+}
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.homeViewModel.todoArray.count
     }
     
-    @objc func floatingButtonTapped() {
-        let addTodoVC = UIStoryboard(name: "AddTodo", bundle: .main).instantiateViewController(withIdentifier: "AddTodoViewController") as! AddTodoViewController
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaskTodoCellCollectionViewCell", for: indexPath) as! TaskTodoCellCollectionViewCell
         
-        addTodoVC.addTodoCallBackCompletion = { todo in
-            self.navigationController?.popViewController(animated: true)
-            print("todo: \(String(describing: todo))")
-        }
-        
-        navigationController?.pushViewController(addTodoVC, animated: true)
+        let todo = self.homeViewModel.todoArray[indexPath.row]
+        cell.titlePaddingLabel.text = todo.title
+        return cell
     }
     
-    @objc func completedStackViewTapped() {
-        isShowCompletedTask = !isShowCompletedTask
-        completedCollectionView.isHidden = !isShowCompletedTask
-        if(isShowCompletedTask) {
-            arrowImaview.image = UIImage(systemName: "chevron.down")
-        } else {
-            arrowImaview.image = UIImage(systemName: "chevron.up")
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = collectionView.frame.size.width
+        let size = CGSize(width: screenWidth, height: 50)
+        return size
     }
-    
 }

@@ -1,20 +1,24 @@
 PODS:
   - Floaty (4.2.0)
   - MPInjector (1.0.6)
+  - PaddingLabel (1.2)
 
 DEPENDENCIES:
   - Floaty (~> 4.2.0)
   - MPInjector
+  - PaddingLabel (= 1.2)
 
 SPEC REPOS:
   trunk:
     - Floaty
     - MPInjector
+    - PaddingLabel
 
 SPEC CHECKSUMS:
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   MPInjector: be65d3b7c5edab35bdb618258a886cda44c1caef
+  PaddingLabel: 21ab5282c780366018b04c30e3920c2f55a2fd14
 
-PODFILE CHECKSUM: 04e0e90339e9267dab7bd3fcb75418b5dfa5c01c
+PODFILE CHECKSUM: b9c6adcf02fedf9720eb7f6eccfd0546c207b2e1
 
 COCOAPODS: 1.14.3

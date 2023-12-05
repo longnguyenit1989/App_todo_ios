@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TaskTodoCellCollectionViewCell" reuseIdentifier="TaskTodoCellCollectionViewCell" id="gTV-IL-0wX" customClass="TaskTodoCellCollectionViewCell" customModule="App_todo_ios" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="299" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="299" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEs-F3-pG9">
+                        <rect key="frame" x="0.0" y="0.0" width="299" height="50"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3QF-di-45Q">
+                                <rect key="frame" x="0.0" y="0.0" width="10" height="50"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="9ce-TI-Dcp"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn ios" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD7-QK-Bvn" userLabel="Title Padding Label" customClass="PaddingLabel" customModule="PaddingLabel">
+                                <rect key="frame" x="10" y="0.0" width="180" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="ArY-TA-VxC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7X6-z1-tSa" userLabel="Status Label">
+                                <rect key="frame" x="195" y="0.0" width="104" height="50"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3QF-di-45Q" firstAttribute="leading" secondItem="sEs-F3-pG9" secondAttribute="leading" id="5Ut-d5-vfK"/>
+                            <constraint firstItem="HD7-QK-Bvn" firstAttribute="leading" secondItem="3QF-di-45Q" secondAttribute="trailing" id="5t4-QM-kmh"/>
+                            <constraint firstItem="7X6-z1-tSa" firstAttribute="top" secondItem="sEs-F3-pG9" secondAttribute="top" id="AkA-8c-Szj"/>
+                            <constraint firstAttribute="bottom" secondItem="HD7-QK-Bvn" secondAttribute="bottom" id="C4c-Oz-QIt"/>
+                            <constraint firstItem="HD7-QK-Bvn" firstAttribute="top" secondItem="sEs-F3-pG9" secondAttribute="top" id="D9f-HJ-Wqe"/>
+                            <constraint firstItem="3QF-di-45Q" firstAttribute="top" secondItem="sEs-F3-pG9" secondAttribute="top" id="EIY-2U-DDl"/>
+                            <constraint firstAttribute="bottom" secondItem="7X6-z1-tSa" secondAttribute="bottom" id="GXs-co-B36"/>
+                            <constraint firstItem="7X6-z1-tSa" firstAttribute="leading" secondItem="HD7-QK-Bvn" secondAttribute="trailing" constant="5" id="IWy-xe-haX"/>
+                            <constraint firstAttribute="bottom" secondItem="3QF-di-45Q" secondAttribute="bottom" id="N43-FE-Cxt"/>
+                            <constraint firstAttribute="height" constant="50" id="f4g-Go-t3c"/>
+                            <constraint firstAttribute="trailing" secondItem="7X6-z1-tSa" secondAttribute="trailing" id="kdf-UT-pPx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="sEs-F3-pG9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0nd-jd-p9W"/>
+                <constraint firstItem="sEs-F3-pG9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="802-ph-oWQ"/>
+                <constraint firstItem="sEs-F3-pG9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FcK-sG-1wf"/>
+                <constraint firstAttribute="trailing" secondItem="sEs-F3-pG9" secondAttribute="trailing" id="RF3-Z4-moz"/>
+                <constraint firstItem="sEs-F3-pG9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a6B-e7-GFO"/>
+                <constraint firstAttribute="trailing" secondItem="sEs-F3-pG9" secondAttribute="trailing" id="mfd-CD-Sld"/>
+                <constraint firstAttribute="bottom" secondItem="sEs-F3-pG9" secondAttribute="bottom" id="zoP-1l-g88"/>
+            </constraints>
+            <size key="customSize" width="299" height="50"/>
+            <connections>
+                <outlet property="statusLabel" destination="7X6-z1-tSa" id="t2b-Cg-YWC"/>
+                <outlet property="titlePaddingLabel" destination="HD7-QK-Bvn" id="2QT-xy-tV2"/>
+            </connections>
+            <point key="canvasLocation" x="129.00763358778624" y="-12.67605633802817"/>
+        </collectionViewCell>
+    </objects>
+    <designables>
+        <designable name="HD7-QK-Bvn">
+            <size key="intrinsicContentSize" width="86" height="30.333333333333332"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
