@@ -11,5 +11,6 @@ extension MPInjector: Registering {
     public func registerService() {
         registerFactory { AddTodoViewModel() }
         registerFactory { HomeViewModel() }
+        registerFactory { EditTodoViewModel() }
     }
 }

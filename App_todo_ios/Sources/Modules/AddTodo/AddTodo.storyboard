@@ -24,7 +24,6 @@
                                         <rect key="frame" x="0.0" y="30" width="337" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="H2B-za-Hv2"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Nr4-SI-ucO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,7 +32,6 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRG-Hr-4rj" userLabel="Title Text Field" customClass="CustomPrimaryTextField" customModule="App_todo_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="65" width="337" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="aAB-fO-oVj"/>
                                             <constraint firstAttribute="height" constant="48" id="n6a-MT-his"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -42,8 +40,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3c-mp-c19" userLabel="Content Label">
                                         <rect key="frame" x="0.0" y="123" width="337" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="06P-QN-uoJ"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="30" id="E1K-ma-BL1"/>
                                             <constraint firstAttribute="height" constant="30" id="rYp-Au-dVO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -51,17 +47,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Content" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="no1-Sm-akA" userLabel="Content Text Field" customClass="CustomPrimaryTextField" customModule="App_todo_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="163" width="337" height="48"/>
+                                        <rect key="frame" x="0.0" y="158" width="337" height="48"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="AxB-Ko-avi"/>
                                             <constraint firstAttribute="height" constant="48" id="oBk-tO-OLc"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="48" id="xI6-S5-sZF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoO-jQ-wfe" userLabel="Add Button" customClass="CustomPrimaryButtton" customModule="App_todo_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="251" width="337" height="48"/>
+                                        <rect key="frame" x="0.0" y="246" width="337" height="48"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="4PF-5c-dec"/>
@@ -92,7 +86,7 @@
                                     <constraint firstAttribute="trailing" secondItem="BzK-7n-oDU" secondAttribute="trailing" id="fvG-R6-SVR"/>
                                     <constraint firstAttribute="trailing" secondItem="zoO-jQ-wfe" secondAttribute="trailing" id="mIo-td-gyV"/>
                                     <constraint firstItem="no1-Sm-akA" firstAttribute="leading" secondItem="Zhq-Ow-mKX" secondAttribute="leading" id="tH6-Va-oi5"/>
-                                    <constraint firstItem="no1-Sm-akA" firstAttribute="top" secondItem="A3c-mp-c19" secondAttribute="bottom" constant="10" id="x1n-Xb-0ku"/>
+                                    <constraint firstItem="no1-Sm-akA" firstAttribute="top" secondItem="A3c-mp-c19" secondAttribute="bottom" constant="5" id="x1n-Xb-0ku"/>
                                     <constraint firstItem="cRG-Hr-4rj" firstAttribute="top" secondItem="BzK-7n-oDU" secondAttribute="bottom" constant="5" id="zb6-rC-3Sb"/>
                                 </constraints>
                             </view>

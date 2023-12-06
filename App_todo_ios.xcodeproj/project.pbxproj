@@ -35,6 +35,9 @@
 		FBA72C842B1DD216002C7A14 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C832B1DD216002C7A14 /* HomeViewModel.swift */; };
 		FBA72C882B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C862B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.swift */; };
 		FBA72C892B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA72C872B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib */; };
+		FBAF0ADD2B205B030076466C /* EditTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAF0ADC2B205B030076466C /* EditTodo.storyboard */; };
+		FBAF0ADF2B205B180076466C /* EditTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF0ADE2B205B180076466C /* EditTodoViewController.swift */; };
+		FBAF0AE12B20695A0076466C /* EditTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF0AE02B20695A0076466C /* EditTodoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,9 @@
 		FBA72C832B1DD216002C7A14 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FBA72C862B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTodoCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBA72C872B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTodoCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		FBAF0ADC2B205B030076466C /* EditTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTodo.storyboard; sourceTree = "<group>"; };
+		FBAF0ADE2B205B180076466C /* EditTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewController.swift; sourceTree = "<group>"; };
+		FBAF0AE02B20695A0076466C /* EditTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +227,7 @@
 		FB3A37AC2B1826CF00C9FD29 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FBAF0ADB2B205AE60076466C /* EditTodo */,
 				FBA72C732B1DAC49002C7A14 /* AddTodo */,
 				FB3A37C02B1984EF00C9FD29 /* Home */,
 				FB3A37BB2B186EB700C9FD29 /* SignUp */,
@@ -325,6 +332,16 @@
 				FBA72C872B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib */,
 			);
 			path = TaskCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		FBAF0ADB2B205AE60076466C /* EditTodo */ = {
+			isa = PBXGroup;
+			children = (
+				FBAF0ADC2B205B030076466C /* EditTodo.storyboard */,
+				FBAF0ADE2B205B180076466C /* EditTodoViewController.swift */,
+				FBAF0AE02B20695A0076466C /* EditTodoViewModel.swift */,
+			);
+			path = EditTodo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +459,7 @@
 				FB3A37BD2B18713900C9FD29 /* SignUp.storyboard in Resources */,
 				FBA72C892B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib in Resources */,
 				FB3A37842B15D48800C9FD29 /* Assets.xcassets in Resources */,
+				FBAF0ADD2B205B030076466C /* EditTodo.storyboard in Resources */,
 				FB3A37822B15D48600C9FD29 /* SignIn.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,11 +588,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBAF0AE12B20695A0076466C /* EditTodoViewModel.swift in Sources */,
 				FB3A37BA2B1841B100C9FD29 /* CustomPrimaryTextField.swift in Sources */,
 				FBA72C822B1DD13B002C7A14 /* Time+Extension.swift in Sources */,
 				FB3A37BF2B18765A00C9FD29 /* SignUpViewController.swift in Sources */,
 				FB3A37C72B198E3D00C9FD29 /* UIApplication+Extension.swift in Sources */,
 				FB3A377F2B15D48600C9FD29 /* SignInViewController.swift in Sources */,
+				FBAF0ADF2B205B180076466C /* EditTodoViewController.swift in Sources */,
 				FBA72C802B1DC854002C7A14 /* AddTodoViewModel.swift in Sources */,
 				FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */,
 				FB3A37B82B183E3200C9FD29 /* CustomPrimaryButtton.swift in Sources */,

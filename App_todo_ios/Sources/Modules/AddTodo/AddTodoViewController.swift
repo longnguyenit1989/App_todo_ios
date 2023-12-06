@@ -20,6 +20,7 @@ class AddTodoViewController: BaseViewController {
     var addTodoCallBackCompletion: ((Todo?) -> Void)?
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
     }
     

@@ -78,7 +78,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k9N-rm-z06" userLabel="Confirm Password Text Field" customClass="CustomPrimaryTextField" customModule="App_todo_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="354" width="358" height="48"/>
+                                        <rect key="frame" x="0.0" y="349" width="358" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="8b1-uj-oCF"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="48" id="hEf-qE-5iz"/>
@@ -88,7 +88,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPH-8P-Yt0" userLabel="Sign up Button" customClass="CustomPrimaryButtton" customModule="App_todo_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="432" width="358" height="48"/>
+                                        <rect key="frame" x="0.0" y="427" width="358" height="48"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="sPw-qo-PwR"/>
@@ -129,7 +129,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Gai-IR-W7A" secondAttribute="trailing" id="mDr-Pj-3cP"/>
                                     <constraint firstItem="Sdu-1C-NJV" firstAttribute="top" secondItem="76k-ZN-Sh5" secondAttribute="bottom" constant="10" id="oef-cE-hhS"/>
                                     <constraint firstItem="Gai-IR-W7A" firstAttribute="top" secondItem="GCD-lO-sbH" secondAttribute="top" constant="50" id="rSu-IP-w58"/>
-                                    <constraint firstItem="k9N-rm-z06" firstAttribute="top" secondItem="Sdu-1C-NJV" secondAttribute="bottom" constant="10" id="wtv-rm-OEW"/>
+                                    <constraint firstItem="k9N-rm-z06" firstAttribute="top" secondItem="Sdu-1C-NJV" secondAttribute="bottom" constant="5" id="wtv-rm-OEW"/>
                                 </constraints>
                             </view>
                         </subviews>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Todo View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EditTodoViewController" id="Y6W-OH-hqX" customClass="EditTodoViewController" customModule="App_todo_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuV-RD-06X">
+                                <rect key="frame" x="28" y="59" width="337" height="759"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M90-Rv-bVW" userLabel="Title Label">
+                                        <rect key="frame" x="0.0" y="30" width="337" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="AqE-WR-hMY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ViQ-b3-MCY" userLabel="Title Text Field" customClass="CustomPrimaryTextField" customModule="App_todo_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="65" width="337" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="mZF-oZ-OCu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uS-v7-Owh" userLabel="Content Label">
+                                        <rect key="frame" x="0.0" y="123" width="337" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="AVc-Oy-UVP"/>
+                                            <constraint firstAttribute="height" constant="30" id="Jsd-ku-rlB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Content" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jo6-Xf-JFa" userLabel="Content Text Field" customClass="CustomPrimaryTextField" customModule="App_todo_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="158" width="337" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="vkJ-d9-xz4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iiv-VN-KGm" userLabel="Edit Button" customClass="CustomPrimaryButtton" customModule="App_todo_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="246" width="337" height="48"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="hHU-GF-KUv"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" title="Edit">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Iiv-VN-KGm" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="Dxw-bS-IdB"/>
+                                    <constraint firstItem="ViQ-b3-MCY" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="EoQ-6F-8e5"/>
+                                    <constraint firstItem="7uS-v7-Owh" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="ILl-7O-BGH"/>
+                                    <constraint firstItem="Iiv-VN-KGm" firstAttribute="top" secondItem="Jo6-Xf-JFa" secondAttribute="bottom" constant="40" id="KPb-zt-sRN"/>
+                                    <constraint firstAttribute="trailing" secondItem="7uS-v7-Owh" secondAttribute="trailing" id="LvH-zA-F7u"/>
+                                    <constraint firstItem="M90-Rv-bVW" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="O67-gg-JHp"/>
+                                    <constraint firstAttribute="trailing" secondItem="ViQ-b3-MCY" secondAttribute="trailing" id="PN2-kX-cTP"/>
+                                    <constraint firstItem="M90-Rv-bVW" firstAttribute="top" secondItem="VuV-RD-06X" secondAttribute="top" constant="30" id="TBM-UY-wYP"/>
+                                    <constraint firstAttribute="trailing" secondItem="M90-Rv-bVW" secondAttribute="trailing" id="WMV-jc-Sni"/>
+                                    <constraint firstItem="Jo6-Xf-JFa" firstAttribute="top" secondItem="7uS-v7-Owh" secondAttribute="bottom" constant="5" id="Wdb-Ls-dX3"/>
+                                    <constraint firstItem="ViQ-b3-MCY" firstAttribute="top" secondItem="M90-Rv-bVW" secondAttribute="bottom" constant="5" id="fG2-kv-lFS"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jo6-Xf-JFa" secondAttribute="trailing" id="lif-GU-RKD"/>
+                                    <constraint firstItem="7uS-v7-Owh" firstAttribute="top" secondItem="ViQ-b3-MCY" secondAttribute="bottom" constant="10" id="vse-d9-BlV"/>
+                                    <constraint firstItem="Jo6-Xf-JFa" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="zJD-bk-XZt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iiv-VN-KGm" secondAttribute="trailing" id="zb3-oD-bvA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VuV-RD-06X" secondAttribute="trailing" constant="28" id="7nF-JO-rkE"/>
+                            <constraint firstItem="VuV-RD-06X" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="Fda-1Q-WSW"/>
+                            <constraint firstItem="VuV-RD-06X" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="d1M-gt-PB1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="VuV-RD-06X" secondAttribute="bottom" id="dki-6j-0bY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentTextField" destination="Jo6-Xf-JFa" id="HCb-TG-nej"/>
+                        <outlet property="editButton" destination="Iiv-VN-KGm" id="smh-Xt-jne"/>
+                        <outlet property="titleTextField" destination="ViQ-b3-MCY" id="lcQ-gP-MJU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

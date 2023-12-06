@@ -52,14 +52,15 @@ class HomeViewController: BaseViewController {
     @objc func floatingAddButtonTapped() {
         let addTodoVC = UIStoryboard(name: "AddTodo", bundle: .main).instantiateViewController(withIdentifier: "AddTodoViewController") as! AddTodoViewController
         
-        addTodoVC.addTodoCallBackCompletion = { [self] todo in
-            if(todo != nil) {
+        addTodoVC.addTodoCallBackCompletion = { [self] todoAdded in
+            if(todoAdded != nil) {
                 self.navigationController?.popViewController(animated: true)
-                self.homeViewModel.todoArray.append(todo!)
-                self.taskCollectionView.reloadData()
+                self.homeViewModel.todoArray.append(todoAdded!)
+                let indexPath = IndexPath(item: homeViewModel.todoArray.count - 1, section: 0)
+                self.taskCollectionView.insertItems(at: [indexPath])
             }
         }
-        navigationController?.pushViewController(addTodoVC, animated: true)
+        self.navigationController?.pushViewController(addTodoVC, animated: true)
     }
     
     func addFloatingButton() {
@@ -85,5 +86,28 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let todo = self.homeViewModel.todoArray[indexPath.row]
         cell.titlePaddingLabel.text = todo.title
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedTodo = homeViewModel.todoArray[indexPath.row]
+        let editTodoVC = UIStoryboard(name: "EditTodo", bundle: .main).instantiateViewController(withIdentifier: "EditTodoViewController") as! EditTodoViewController
+        editTodoVC.selectedTodo = selectedTodo
+        
+        editTodoVC.editTodoCallBackCompletion = { [self] todoEdited in
+            if(todoEdited != nil) {
+                self.navigationController?.popViewController(animated: true)
+                
+                for (index, todo) in homeViewModel.todoArray.enumerated() {
+                    if(todo.id == todoEdited!.id) {
+                        homeViewModel.todoArray[index] = todoEdited!
+                        let indexPath = IndexPath(item: index, section: 0)
+                        self.taskCollectionView.reloadItems(at: [indexPath])
+                        break
+                    }
+                }
+            }
+        }
+        
+        self.navigationController?.pushViewController(editTodoVC, animated: true)
     }
 }
