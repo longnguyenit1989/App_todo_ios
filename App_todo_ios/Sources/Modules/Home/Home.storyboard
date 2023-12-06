@@ -19,15 +19,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2xY-ay-dJi">
                                 <rect key="frame" x="28" y="103" width="337" height="715"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-O4-k52">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goz-Rz-UoF" userLabel="Header View">
                                         <rect key="frame" x="0.0" y="0.0" width="337" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GvJ-h7-W36">
+                                                <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="40"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7P3-ns-vGe">
+                                                <rect key="frame" x="168.66666666666663" y="0.0" width="168.33333333333337" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" systemColor="systemGrayColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="NPE-f6-ZjA"/>
+                                            <constraint firstItem="GvJ-h7-W36" firstAttribute="leading" secondItem="goz-Rz-UoF" secondAttribute="leading" id="0c2-kq-gRa"/>
+                                            <constraint firstItem="GvJ-h7-W36" firstAttribute="top" secondItem="goz-Rz-UoF" secondAttribute="top" id="36Y-cC-iep"/>
+                                            <constraint firstItem="7P3-ns-vGe" firstAttribute="top" secondItem="goz-Rz-UoF" secondAttribute="top" id="5UG-xW-BxI"/>
+                                            <constraint firstAttribute="bottom" secondItem="7P3-ns-vGe" secondAttribute="bottom" id="Cia-VK-qln"/>
+                                            <constraint firstItem="GvJ-h7-W36" firstAttribute="width" secondItem="goz-Rz-UoF" secondAttribute="width" multiplier="0.5" id="OsX-uL-syH"/>
+                                            <constraint firstAttribute="height" constant="40" id="Sab-nh-tRf"/>
+                                            <constraint firstItem="7P3-ns-vGe" firstAttribute="width" secondItem="goz-Rz-UoF" secondAttribute="width" multiplier="0.5" id="TIQ-e2-lKy"/>
+                                            <constraint firstAttribute="bottom" secondItem="GvJ-h7-W36" secondAttribute="bottom" id="e6O-UG-l77"/>
+                                            <constraint firstAttribute="trailing" secondItem="7P3-ns-vGe" secondAttribute="trailing" id="euP-QV-xFl"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gYO-Y2-e0T" userLabel="Task Collection View">
                                         <rect key="frame" x="0.0" y="40" width="337" height="675"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -42,10 +62,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="UGA-O4-k52" firstAttribute="top" secondItem="2xY-ay-dJi" secondAttribute="top" id="LpA-mK-5bJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="UGA-O4-k52" secondAttribute="trailing" id="dbw-5l-xkA"/>
-                                    <constraint firstItem="gYO-Y2-e0T" firstAttribute="top" secondItem="UGA-O4-k52" secondAttribute="bottom" id="ehm-4Y-p1m"/>
-                                    <constraint firstItem="UGA-O4-k52" firstAttribute="leading" secondItem="2xY-ay-dJi" secondAttribute="leading" id="hWD-RV-KxI"/>
+                                    <constraint firstItem="goz-Rz-UoF" firstAttribute="leading" secondItem="2xY-ay-dJi" secondAttribute="leading" id="6OA-l4-uIh"/>
+                                    <constraint firstItem="gYO-Y2-e0T" firstAttribute="top" secondItem="goz-Rz-UoF" secondAttribute="bottom" id="Ecs-TZ-61S"/>
+                                    <constraint firstItem="goz-Rz-UoF" firstAttribute="top" secondItem="2xY-ay-dJi" secondAttribute="top" id="c3b-Oc-KF8"/>
+                                    <constraint firstAttribute="trailing" secondItem="goz-Rz-UoF" secondAttribute="trailing" id="jpI-bm-M6v"/>
                                     <constraint firstAttribute="trailing" secondItem="gYO-Y2-e0T" secondAttribute="trailing" id="rJd-hf-e7P"/>
                                     <constraint firstItem="gYO-Y2-e0T" firstAttribute="leading" secondItem="2xY-ay-dJi" secondAttribute="leading" id="vMw-Uh-Dzb"/>
                                     <constraint firstAttribute="bottom" secondItem="gYO-Y2-e0T" secondAttribute="bottom" id="vas-Cr-mxy"/>
@@ -63,6 +83,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ogx-2z-GIi"/>
                     <connections>
+                        <outlet property="headerView" destination="goz-Rz-UoF" id="NRl-ug-dtq"/>
                         <outlet property="taskCollectionView" destination="gYO-Y2-e0T" id="a04-xf-dKQ"/>
                     </connections>
                 </viewController>
@@ -92,6 +113,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

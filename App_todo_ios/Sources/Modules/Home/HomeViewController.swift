@@ -12,6 +12,7 @@ import MPInjector
 class HomeViewController: BaseViewController {
     
     @IBOutlet weak var taskCollectionView: UICollectionView!
+    @IBOutlet weak var headerView: UIView!
     
     @Inject var homeViewModel: HomeViewModel
     
@@ -21,9 +22,12 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        headerView.isHidden = homeViewModel.todoArray.count <= 0
+    }
+    
     override func setupUi() {
         addFloatingButton()
-        
         setNavigationBar(title: "HOME")
         setTaskCollectionView()
     }
@@ -33,6 +37,16 @@ class HomeViewController: BaseViewController {
         taskCollectionView.delegate = self
         let nib = UINib(nibName: "TaskTodoCellCollectionViewCell", bundle: .main)
         taskCollectionView.register(nib, forCellWithReuseIdentifier: "TaskTodoCellCollectionViewCell")
+        
+        // set item size taskCollectionView
+        let screenWidthOffset = UIScreen.main.bounds.width - 56
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidthOffset, height: 45)
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 5
+        
+        taskCollectionView.collectionViewLayout = layout
     }
     
     @objc func floatingAddButtonTapped() {
@@ -60,7 +74,7 @@ class HomeViewController: BaseViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.homeViewModel.todoArray.count
     }
@@ -71,11 +85,5 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         let todo = self.homeViewModel.todoArray[indexPath.row]
         cell.titlePaddingLabel.text = todo.title
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let screenWidth = collectionView.frame.size.width
-        let size = CGSize(width: screenWidth, height: 50)
-        return size
     }
 }
