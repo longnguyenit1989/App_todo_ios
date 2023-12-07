@@ -22,14 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="299" height="45"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3QF-di-45Q">
-                                <rect key="frame" x="0.0" y="0.0" width="10" height="45"/>
+                                <rect key="frame" x="0.0" y="0.0" width="5" height="45"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="10" id="9ce-TI-Dcp"/>
+                                    <constraint firstAttribute="width" constant="5" id="9ce-TI-Dcp"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn ios" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD7-QK-Bvn" userLabel="Title Padding Label" customClass="PaddingLabel" customModule="PaddingLabel">
-                                <rect key="frame" x="10" y="0.0" width="194.33333333333334" height="45"/>
+                                <rect key="frame" x="5" y="0.0" width="194.33333333333334" height="45"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -41,7 +41,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Working" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7X6-z1-tSa" userLabel="Status Label" customClass="PaddingLabel" customModule="PaddingLabel">
-                                <rect key="frame" x="209.33333333333334" y="0.0" width="89.666666666666657" height="45"/>
+                                <rect key="frame" x="204.33333333333334" y="0.0" width="94.666666666666657" height="45"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

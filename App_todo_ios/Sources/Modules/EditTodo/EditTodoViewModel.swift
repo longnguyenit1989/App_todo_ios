@@ -9,8 +9,18 @@ import Foundation
 
 class EditTodoViewModel {
     var todoEdited: Todo?
+    let statusList = [StatusTodo.working, StatusTodo.done, StatusTodo.stuck]
     
-    func editTodo(title: String, content: String, todo: Todo?) {
-        todoEdited = Todo(todo?.id ?? 1 , title, content)
+    func setTodoEdited(todo: Todo) {
+        todoEdited = todo
+    }
+    
+    func editTodo(title: String, content: String) {
+        todoEdited?.title = title
+        todoEdited?.content = content
+    }
+    
+    func editStatusTodo(status: StatusTodo) {
+        todoEdited?.status = status
     }
 }

@@ -16,8 +16,6 @@ class HomeViewController: BaseViewController {
     
     @Inject var homeViewModel: HomeViewModel
     
-    var isShowCompletedTask = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -85,6 +83,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         let todo = self.homeViewModel.todoArray[indexPath.row]
         cell.titlePaddingLabel.text = todo.title
+        cell.statusLabel.text = todo.status.rawValue
+        cell.statusLabel.backgroundColor = todo.status.statusColor
         return cell
     }
     

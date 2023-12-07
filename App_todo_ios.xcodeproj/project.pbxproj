@@ -38,6 +38,7 @@
 		FBAF0ADD2B205B030076466C /* EditTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAF0ADC2B205B030076466C /* EditTodo.storyboard */; };
 		FBAF0ADF2B205B180076466C /* EditTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF0ADE2B205B180076466C /* EditTodoViewController.swift */; };
 		FBAF0AE12B20695A0076466C /* EditTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF0AE02B20695A0076466C /* EditTodoViewModel.swift */; };
+		FBAF0AE32B216CB80076466C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF0AE22B216CB80076466C /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		FBAF0ADC2B205B030076466C /* EditTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTodo.storyboard; sourceTree = "<group>"; };
 		FBAF0ADE2B205B180076466C /* EditTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewController.swift; sourceTree = "<group>"; };
 		FBAF0AE02B20695A0076466C /* EditTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewModel.swift; sourceTree = "<group>"; };
+		FBAF0AE22B216CB80076466C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -287,6 +289,7 @@
 			children = (
 				FB3A37C62B198E3D00C9FD29 /* UIApplication+Extension.swift */,
 				FBA72C812B1DD13B002C7A14 /* Time+Extension.swift */,
+				FBAF0AE22B216CB80076466C /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				FB3A37BA2B1841B100C9FD29 /* CustomPrimaryTextField.swift in Sources */,
 				FBA72C822B1DD13B002C7A14 /* Time+Extension.swift in Sources */,
 				FB3A37BF2B18765A00C9FD29 /* SignUpViewController.swift in Sources */,
+				FBAF0AE32B216CB80076466C /* String+Extensions.swift in Sources */,
 				FB3A37C72B198E3D00C9FD29 /* UIApplication+Extension.swift in Sources */,
 				FB3A377F2B15D48600C9FD29 /* SignInViewController.swift in Sources */,
 				FBAF0ADF2B205B180076466C /* EditTodoViewController.swift in Sources */,

@@ -12,6 +12,6 @@ class AddTodoViewModel {
     
     func addTodo(title: String, content: String) {
         let timestamp = getCurrentSecond()
-        todo = Todo(timestamp, title, content)
+        todo = Todo(timestamp, title, content, StatusTodo.working)
     }
 }

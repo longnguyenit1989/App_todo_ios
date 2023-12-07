@@ -7,22 +7,17 @@
 
 import Foundation
 
-struct Todo: Codable {
+struct Todo {
     var id: Int64
     var title: String
     var content: String
     
-    //    enum CodingKeys: String, CodingKey {
-    //        case id, title, content
-    //        case id = "id"
-    //        case title = "title"
-    //        case content = "content"
-    //    }
+    var status: StatusTodo
     
-    init(_ id: Int64,_ title: String,_ content: String) {
+    init(_ id: Int64,_ title: String,_ content: String, _ status: StatusTodo) {
         self.id = id
         self.title = title
         self.content = content
+        self.status = status
     }
-    
 }
