@@ -15,6 +15,12 @@ import UIKit
 import CoreData
 
 class TodoManager {
+    private let todoTable = "Todo"
+    private let idKey = "id"
+    private let titleKey = "title"
+    private let contentKey = "content"
+    private let statusKey = "status"
+    
     lazy var managedContext: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("AppDelegate not found")
@@ -24,38 +30,38 @@ class TodoManager {
     
     func saveTodos(_ todos: [Todo]) {
         for todo in todos {
-            let entity = NSEntityDescription.entity(forEntityName: "Todo", in: managedContext)!
+            let entity = NSEntityDescription.entity(forEntityName: todoTable, in: managedContext)!
             let todoEntity = NSManagedObject(entity: entity, insertInto: managedContext)
             
-            todoEntity.setValue(todo.id, forKey: "id")
-            todoEntity.setValue(todo.title, forKey: "title")
-            todoEntity.setValue(todo.content, forKey: "content")
-            todoEntity.setValue(todo.status.rawValue, forKey: "status")
+            todoEntity.setValue(todo.id, forKey: idKey)
+            todoEntity.setValue(todo.title, forKey: titleKey)
+            todoEntity.setValue(todo.content, forKey: contentKey)
+            todoEntity.setValue(todo.status.rawValue, forKey: statusKey)
             managedContextSave()
         }
     }
     
     func saveTodo(_ todo: Todo) {
-        let entity = NSEntityDescription.entity(forEntityName: "Todo", in: managedContext)!
+        let entity = NSEntityDescription.entity(forEntityName: todoTable, in: managedContext)!
         let todoEntity = NSManagedObject(entity: entity, insertInto: managedContext)
         
-        todoEntity.setValue(todo.id, forKey: "id")
-        todoEntity.setValue(todo.title, forKey: "title")
-        todoEntity.setValue(todo.content, forKey: "content")
-        todoEntity.setValue(todo.status.rawValue, forKey: "status")
+        todoEntity.setValue(todo.id, forKey: idKey)
+        todoEntity.setValue(todo.title, forKey: titleKey)
+        todoEntity.setValue(todo.content, forKey: contentKey)
+        todoEntity.setValue(todo.status.rawValue, forKey: statusKey)
         managedContextSave()
     }
     
     func updateTodo(_ updatedTodo: Todo) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Todo")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: todoTable)
         do {
             let results = try managedContext.fetch(fetchRequest)
-            for todo in results as! [NSManagedObject] {
-                let id = todo.value(forKey: "id") as! Int64
+            for data in results as! [NSManagedObject] {
+                let id = data.value(forKey: idKey) as! Int64
                 if(updatedTodo.id == id) {
-                    todo.setValue(updatedTodo.title, forKey: "title")
-                    todo.setValue(updatedTodo.content, forKey: "content")
-                    todo.setValue(updatedTodo.status.rawValue, forKey: "status")
+                    data.setValue(updatedTodo.title, forKey: titleKey)
+                    data.setValue(updatedTodo.content, forKey: contentKey)
+                    data.setValue(updatedTodo.status.rawValue, forKey: statusKey)
                     break
                 }
             }
@@ -75,15 +81,15 @@ class TodoManager {
     
     func fetchTodos() -> [Todo] {
         var todos: [Todo] = []
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Todo")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: todoTable)
         
         do {
             let results = try managedContext.fetch(fetchRequest)
             for data in results as! [NSManagedObject] {
-                let id = data.value(forKey: "id") as! Int64
-                let title = data.value(forKey: "title") as! String
-                let content = data.value(forKey: "content") as! String
-                let statusRawValue = data.value(forKey: "status") as! String
+                let id = data.value(forKey: idKey) as! Int64
+                let title = data.value(forKey: titleKey) as! String
+                let content = data.value(forKey: contentKey) as! String
+                let statusRawValue = data.value(forKey: statusKey) as! String
                 let status = StatusTodo(rawValue: statusRawValue) ?? StatusTodo.working
                 
                 let todo = Todo(id, title, content, status)
@@ -92,7 +98,6 @@ class TodoManager {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
         return todos
     }
 }
