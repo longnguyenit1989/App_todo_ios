@@ -26,6 +26,8 @@
 		FB3A37C22B19850000C9FD29 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3A37C12B19850000C9FD29 /* Home.storyboard */; };
 		FB3A37C42B19851D00C9FD29 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A37C32B19851D00C9FD29 /* HomeViewController.swift */; };
 		FB3A37C72B198E3D00C9FD29 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A37C62B198E3D00C9FD29 /* UIApplication+Extension.swift */; };
+		FB4ABF772B22BB8D0097D848 /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4ABF762B22BB8D0097D848 /* TodoManager.swift */; };
+		FB4ABF7D2B22F3400097D848 /* TodoEntities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB4ABF7B2B22F3400097D848 /* TodoEntities.xcdatamodeld */; };
 		FBA72C752B1DAC68002C7A14 /* AddTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */; };
 		FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */; };
 		FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C7A2B1DB868002C7A14 /* Todo.swift */; };
@@ -88,6 +90,8 @@
 		FB3A37C12B19850000C9FD29 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		FB3A37C32B19851D00C9FD29 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FB3A37C62B198E3D00C9FD29 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		FB4ABF762B22BB8D0097D848 /* TodoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
+		FB4ABF7C2B22F3400097D848 /* TodoEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoEntity.xcdatamodel; sourceTree = "<group>"; };
 		FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTodo.storyboard; sourceTree = "<group>"; };
 		FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		FBA72C7A2B1DB868002C7A14 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 		FB3A376E2B15D48600C9FD29 = {
 			isa = PBXGroup;
 			children = (
+				FB4ABF7B2B22F3400097D848 /* TodoEntities.xcdatamodeld */,
 				FB3A37792B15D48600C9FD29 /* App_todo_ios */,
 				FB3A37902B15D48800C9FD29 /* App_todo_iosTests */,
 				FB3A379A2B15D48900C9FD29 /* App_todo_iosUITests */,
@@ -241,6 +246,7 @@
 		FB3A37B22B18349800C9FD29 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FB4ABF752B22BB690097D848 /* Manager */,
 				FB3A37B62B183DAA00C9FD29 /* CustomView */,
 				FB3A37B32B1834A400C9FD29 /* Base */,
 			);
@@ -292,6 +298,14 @@
 				FBAF0AE22B216CB80076466C /* String+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB4ABF752B22BB690097D848 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FB4ABF762B22BB8D0097D848 /* TodoManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		FBA72C732B1DAC49002C7A14 /* AddTodo */ = {
@@ -604,10 +618,12 @@
 				FB3A37B82B183E3200C9FD29 /* CustomPrimaryButtton.swift in Sources */,
 				FBA72C7E2B1DC7CC002C7A14 /* AppInjector.swift in Sources */,
 				FBA72C842B1DD216002C7A14 /* HomeViewModel.swift in Sources */,
+				FB4ABF772B22BB8D0097D848 /* TodoManager.swift in Sources */,
 				FB3A37B52B1834CD00C9FD29 /* BaseViewController.swift in Sources */,
 				FBA72C882B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.swift in Sources */,
 				FB3A377B2B15D48600C9FD29 /* AppDelegate.swift in Sources */,
 				FB3A37C42B19851D00C9FD29 /* HomeViewController.swift in Sources */,
+				FB4ABF7D2B22F3400097D848 /* TodoEntities.xcdatamodeld in Sources */,
 				FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,6 +964,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FB4ABF7B2B22F3400097D848 /* TodoEntities.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FB4ABF7C2B22F3400097D848 /* TodoEntity.xcdatamodel */,
+			);
+			currentVersion = FB4ABF7C2B22F3400097D848 /* TodoEntity.xcdatamodel */;
+			path = TodoEntities.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FB3A376F2B15D48600C9FD29 /* Project object */;
 }

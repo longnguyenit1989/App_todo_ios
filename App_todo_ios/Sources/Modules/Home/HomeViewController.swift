@@ -15,9 +15,11 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var headerView: UIView!
     
     @Inject var homeViewModel: HomeViewModel
+    @Inject var todoManager: TodoManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetTodosFromCoreData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,6 +30,10 @@ class HomeViewController: BaseViewController {
         addFloatingButton()
         setNavigationBar(title: "HOME")
         setTaskCollectionView()
+    }
+    
+    func fetTodosFromCoreData() {
+        homeViewModel.todoArray = todoManager.fetchTodos()
     }
     
     func setTaskCollectionView() {
@@ -54,6 +60,7 @@ class HomeViewController: BaseViewController {
             if(todoAdded != nil) {
                 self.navigationController?.popViewController(animated: true)
                 self.homeViewModel.todoArray.append(todoAdded!)
+                todoManager.saveTodo(todoAdded!)
                 let indexPath = IndexPath(item: homeViewModel.todoArray.count - 1, section: 0)
                 self.taskCollectionView.insertItems(at: [indexPath])
             }
@@ -102,6 +109,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                         homeViewModel.todoArray[index] = todoEdited!
                         let indexPath = IndexPath(item: index, section: 0)
                         self.taskCollectionView.reloadItems(at: [indexPath])
+                        self.todoManager.updateTodo(todoEdited!)
                         break
                     }
                 }

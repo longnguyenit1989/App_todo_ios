@@ -94,6 +94,9 @@
         </collectionViewCell>
     </objects>
     <designables>
+        <designable name="7X6-z1-tSa">
+            <size key="intrinsicContentSize" width="73" height="30.333333333333332"/>
+        </designable>
         <designable name="HD7-QK-Bvn">
             <size key="intrinsicContentSize" width="86" height="30.333333333333332"/>
         </designable>
