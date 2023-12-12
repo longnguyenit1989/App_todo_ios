@@ -14,6 +14,9 @@
 		FB1F0E962B281C1F009FA9DB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0E952B281C1F009FA9DB /* SignUpViewModel.swift */; };
 		FB1F0E982B28390C009FA9DB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0E972B28390C009FA9DB /* UIViewController+Extensions.swift */; };
 		FB1F0E9A2B2842A3009FA9DB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0E992B2842A3009FA9DB /* SignInViewModel.swift */; };
+		FB1F0E9C2B285C50009FA9DB /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0E9B2B285C50009FA9DB /* Storage.swift */; };
+		FB1F0E9F2B285DCA009FA9DB /* KeychainStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0E9E2B285DCA009FA9DB /* KeychainStorage.swift */; };
+		FB1F0EA22B287104009FA9DB /* LocalStorageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0EA12B287104009FA9DB /* LocalStorageRepository.swift */; };
 		FB3A377B2B15D48600C9FD29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A377A2B15D48600C9FD29 /* AppDelegate.swift */; };
 		FB3A377F2B15D48600C9FD29 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A377E2B15D48600C9FD29 /* SignInViewController.swift */; };
 		FB3A37822B15D48600C9FD29 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3A37802B15D48600C9FD29 /* SignIn.storyboard */; };
@@ -78,6 +81,9 @@
 		FB1F0E952B281C1F009FA9DB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		FB1F0E972B28390C009FA9DB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FB1F0E992B2842A3009FA9DB /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		FB1F0E9B2B285C50009FA9DB /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		FB1F0E9E2B285DCA009FA9DB /* KeychainStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStorage.swift; sourceTree = "<group>"; };
+		FB1F0EA12B287104009FA9DB /* LocalStorageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageRepository.swift; sourceTree = "<group>"; };
 		FB3A37772B15D48600C9FD29 /* App_todo_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_todo_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3A377A2B15D48600C9FD29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB3A377E2B15D48600C9FD29 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FB1F0E9D2B285DAC009FA9DB /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				FB1F0E9B2B285C50009FA9DB /* Storage.swift */,
+				FB1F0E9E2B285DCA009FA9DB /* KeychainStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		FB1F0EA02B2870C9009FA9DB /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				FB1F0EA12B287104009FA9DB /* LocalStorageRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		FB3A376E2B15D48600C9FD29 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +244,7 @@
 		FB3A37AA2B1825C300C9FD29 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FB1F0EA02B2870C9009FA9DB /* Repository */,
 				FBA72C7C2B1DC78A002C7A14 /* Application */,
 				FBA72C782B1DB7FF002C7A14 /* Data */,
 				FB3A37C52B198DE600C9FD29 /* Extensions */,
@@ -332,6 +356,7 @@
 		FBA72C782B1DB7FF002C7A14 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FB1F0E9D2B285DAC009FA9DB /* Storage */,
 				FBA72C792B1DB81F002C7A14 /* Model */,
 			);
 			path = Data;
@@ -624,8 +649,10 @@
 				FB3A37BF2B18765A00C9FD29 /* SignUpViewController.swift in Sources */,
 				FBAF0AE32B216CB80076466C /* String+Extensions.swift in Sources */,
 				FB3A37C72B198E3D00C9FD29 /* UIApplication+Extension.swift in Sources */,
+				FB1F0EA22B287104009FA9DB /* LocalStorageRepository.swift in Sources */,
 				FB3A377F2B15D48600C9FD29 /* SignInViewController.swift in Sources */,
 				FBAF0ADF2B205B180076466C /* EditTodoViewController.swift in Sources */,
+				FB1F0E9C2B285C50009FA9DB /* Storage.swift in Sources */,
 				FBA72C802B1DC854002C7A14 /* AddTodoViewModel.swift in Sources */,
 				FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */,
 				FB3A37B82B183E3200C9FD29 /* CustomPrimaryButtton.swift in Sources */,
@@ -639,6 +666,7 @@
 				FB4ABF7D2B22F3400097D848 /* TodoEntities.xcdatamodeld in Sources */,
 				FB1F0E9A2B2842A3009FA9DB /* SignInViewModel.swift in Sources */,
 				FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */,
+				FB1F0E9F2B285DCA009FA9DB /* KeychainStorage.swift in Sources */,
 				FB1F0E962B281C1F009FA9DB /* SignUpViewModel.swift in Sources */,
 				FB1F0E942B280D70009FA9DB /* User.swift in Sources */,
 			);

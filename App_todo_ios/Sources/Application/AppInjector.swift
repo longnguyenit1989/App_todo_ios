@@ -9,12 +9,20 @@ import MPInjector
 
 extension MPInjector: Registering {
     public func registerService() {
+        // MARK: Viewmodel
         registerFactory { AddTodoViewModel() }
         registerFactory { HomeViewModel() }
         registerFactory { EditTodoViewModel() }
         registerFactory { SignUpViewModel() }
         registerFactory { SignInViewModel() }
         
+        // MARK: Manager
         registerSingleton { TodoManager() }
+        
+        // MARK: Storage
+        registerSingleton { KeychainStorage() as Storage }
+        
+        // MARK: Repository
+        registerSingleton { LocalStorage() as LocalStorageRepository }
     }
 }

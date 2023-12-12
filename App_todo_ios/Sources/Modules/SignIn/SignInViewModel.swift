@@ -11,8 +11,17 @@ import MPInjector
 class SignInViewModel {
     
     @Inject var todoManager: TodoManager
+    @Inject var localStorage: LocalStorageRepository
     
     func login(_ email: String, _ password: String) -> Bool {
         return todoManager.checkLogin(email, password)
+    }
+    
+    func getEmailStorage() -> String? {
+        return localStorage.getEmail()
+    }
+    
+    func setEmailStorage(email: String) {
+        localStorage.setEmail(newValue: email)
     }
 }

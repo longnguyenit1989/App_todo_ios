@@ -22,6 +22,10 @@ class SignInViewController: BaseViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        checkLoggined()
+    }
+    
     override func setupUi() {
         super.setupUi()
         setUiAndClickSignUpLabel()
@@ -30,6 +34,19 @@ class SignInViewController: BaseViewController {
         let tapForgotPassGesture = UITapGestureRecognizer(target: self, action: #selector(forgotPassTapped))
         forgotPassLabel.isUserInteractionEnabled = true
         forgotPassLabel.addGestureRecognizer(tapForgotPassGesture)
+    }
+    
+    func checkLoggined() {
+        let emailStorage = self.signInViewModel.getEmailStorage()
+        if (emailStorage != nil && emailStorage?.isEmpty == false) {
+            toHomeAndSetRootViewcontroller()
+        }
+    }
+    
+    func toHomeAndSetRootViewcontroller() {
+        let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
+        UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
+        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
     }
     
     func setUiAndClickSignUpLabel() {
@@ -63,9 +80,8 @@ class SignInViewController: BaseViewController {
         } else if (self.signInViewModel.login(email, password) == false) {
             showToast(message: "Your email or password wrong, please check.")
         } else {
-            let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
-            UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
-            UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+            self.signInViewModel.setEmailStorage(email: email)
+            toHomeAndSetRootViewcontroller()
         }
     }
 }

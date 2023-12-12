@@ -6,13 +6,9 @@
 //
 
 import Foundation
-
 import UIKit
 import CoreData
-
-import Foundation
-import UIKit
-import CoreData
+import MPInjector
 
 class TodoManager {
     private let todoTable = "Todo"
@@ -24,6 +20,8 @@ class TodoManager {
     private let userTable = "User"
     private let emailKey = "email"
     private let passwordKey = "password"
+    
+    @Inject var storage: Storage
     
     lazy var managedContext: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -122,6 +120,7 @@ class TodoManager {
                 let emailCoreData = data.value(forKey: emailKey) as! String
                 let passwordCoreData = data.value(forKey: passwordKey) as! String
                 if (email.elementsEqual(emailCoreData) == true && password.elementsEqual(passwordCoreData) == true) {
+                    storage.setString(key: StorageConstants.email, value: email)
                     return true
                 }
             }

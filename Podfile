@@ -8,6 +8,7 @@ target 'App_todo_ios' do
   pod 'Floaty', '~> 4.2.0'
   pod 'MPInjector'
   pod 'PaddingLabel', '1.2'
+  pod 'KeychainAccess'
 
 
   # Pods for App_todo_ios
