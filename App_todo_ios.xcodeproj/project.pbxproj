@@ -10,6 +10,10 @@
 		17253EB47114E691435E5F8C /* Pods_App_todo_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CB853CC545B66B6BF034C18 /* Pods_App_todo_ios.framework */; };
 		1FF399D9947D244726F02A06 /* Pods_App_todo_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847059EE2A07337AD4A06BA8 /* Pods_App_todo_iosTests.framework */; };
 		AB022FB8F161B7E86A142A35 /* Pods_App_todo_ios_App_todo_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 636A0F885E7E3EA07CBE2D58 /* Pods_App_todo_ios_App_todo_iosUITests.framework */; };
+		FB1F0E942B280D70009FA9DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0E932B280D70009FA9DB /* User.swift */; };
+		FB1F0E962B281C1F009FA9DB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0E952B281C1F009FA9DB /* SignUpViewModel.swift */; };
+		FB1F0E982B28390C009FA9DB /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0E972B28390C009FA9DB /* UIViewController+Extensions.swift */; };
+		FB1F0E9A2B2842A3009FA9DB /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1F0E992B2842A3009FA9DB /* SignInViewModel.swift */; };
 		FB3A377B2B15D48600C9FD29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A377A2B15D48600C9FD29 /* AppDelegate.swift */; };
 		FB3A377F2B15D48600C9FD29 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A377E2B15D48600C9FD29 /* SignInViewController.swift */; };
 		FB3A37822B15D48600C9FD29 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3A37802B15D48600C9FD29 /* SignIn.storyboard */; };
@@ -70,6 +74,10 @@
 		99A7B3F83D78F7684C6594F6 /* Pods-App_todo_ios-App_todo_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App_todo_ios-App_todo_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-App_todo_ios-App_todo_iosUITests/Pods-App_todo_ios-App_todo_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA9507948BC0E590684BDD6B /* Pods-App_todo_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App_todo_iosTests.release.xcconfig"; path = "Target Support Files/Pods-App_todo_iosTests/Pods-App_todo_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		BDB1F763E5BB30AC10F88B99 /* Pods-App_todo_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App_todo_ios.debug.xcconfig"; path = "Target Support Files/Pods-App_todo_ios/Pods-App_todo_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		FB1F0E932B280D70009FA9DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FB1F0E952B281C1F009FA9DB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		FB1F0E972B28390C009FA9DB /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FB1F0E992B2842A3009FA9DB /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		FB3A37772B15D48600C9FD29 /* App_todo_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App_todo_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3A377A2B15D48600C9FD29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB3A377E2B15D48600C9FD29 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -225,8 +233,9 @@
 		FB3A37AB2B1825D300C9FD29 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				FB3A377E2B15D48600C9FD29 /* SignInViewController.swift */,
 				FB3A37802B15D48600C9FD29 /* SignIn.storyboard */,
+				FB3A377E2B15D48600C9FD29 /* SignInViewController.swift */,
+				FB1F0E992B2842A3009FA9DB /* SignInViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -275,6 +284,7 @@
 			children = (
 				FB3A37BC2B18713900C9FD29 /* SignUp.storyboard */,
 				FB3A37BE2B18765A00C9FD29 /* SignUpViewController.swift */,
+				FB1F0E952B281C1F009FA9DB /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -296,6 +306,7 @@
 				FB3A37C62B198E3D00C9FD29 /* UIApplication+Extension.swift */,
 				FBA72C812B1DD13B002C7A14 /* Time+Extension.swift */,
 				FBAF0AE22B216CB80076466C /* String+Extensions.swift */,
+				FB1F0E972B28390C009FA9DB /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				FBA72C7A2B1DB868002C7A14 /* Todo.swift */,
+				FB1F0E932B280D70009FA9DB /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -605,6 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1F0E982B28390C009FA9DB /* UIViewController+Extensions.swift in Sources */,
 				FBAF0AE12B20695A0076466C /* EditTodoViewModel.swift in Sources */,
 				FB3A37BA2B1841B100C9FD29 /* CustomPrimaryTextField.swift in Sources */,
 				FBA72C822B1DD13B002C7A14 /* Time+Extension.swift in Sources */,
@@ -624,7 +637,10 @@
 				FB3A377B2B15D48600C9FD29 /* AppDelegate.swift in Sources */,
 				FB3A37C42B19851D00C9FD29 /* HomeViewController.swift in Sources */,
 				FB4ABF7D2B22F3400097D848 /* TodoEntities.xcdatamodeld in Sources */,
+				FB1F0E9A2B2842A3009FA9DB /* SignInViewModel.swift in Sources */,
 				FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */,
+				FB1F0E962B281C1F009FA9DB /* SignUpViewModel.swift in Sources */,
+				FB1F0E942B280D70009FA9DB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,8 @@ extension MPInjector: Registering {
         registerFactory { AddTodoViewModel() }
         registerFactory { HomeViewModel() }
         registerFactory { EditTodoViewModel() }
+        registerFactory { SignUpViewModel() }
+        registerFactory { SignInViewModel() }
         
         registerSingleton { TodoManager() }
     }

@@ -143,9 +143,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="confirmPasswordTextField" destination="Sdu-1C-NJV" id="Gcr-0S-zMg"/>
-                        <outlet property="emailTextField" destination="76k-ZN-Sh5" id="LWD-fE-FHo"/>
-                        <outlet property="passwordTextField" destination="76k-ZN-Sh5" id="vKt-dQ-MYU"/>
+                        <outlet property="confirmPasswordTextField" destination="k9N-rm-z06" id="med-Ch-OyA"/>
+                        <outlet property="emailTextField" destination="C3e-LC-c9E" id="kZp-cL-HRH"/>
+                        <outlet property="passwordTextField" destination="76k-ZN-Sh5" id="tXh-Nd-7dW"/>
+                        <outlet property="signUpButton" destination="pPH-8P-Yt0" id="tdc-BL-dTJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

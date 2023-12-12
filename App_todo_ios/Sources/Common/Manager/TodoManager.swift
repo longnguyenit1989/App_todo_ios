@@ -21,6 +21,10 @@ class TodoManager {
     private let contentKey = "content"
     private let statusKey = "status"
     
+    private let userTable = "User"
+    private let emailKey = "email"
+    private let passwordKey = "password"
+    
     lazy var managedContext: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("AppDelegate not found")
@@ -49,6 +53,15 @@ class TodoManager {
         todoEntity.setValue(todo.title, forKey: titleKey)
         todoEntity.setValue(todo.content, forKey: contentKey)
         todoEntity.setValue(todo.status.rawValue, forKey: statusKey)
+        managedContextSave()
+    }
+    
+    func saveUser(_ user: User) {
+        let entity = NSEntityDescription.entity(forEntityName: userTable, in: managedContext)!
+        let userEntity = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        userEntity.setValue(user.email, forKey: emailKey)
+        userEntity.setValue(user.password, forKey: passwordKey)
         managedContextSave()
     }
     
@@ -100,6 +113,25 @@ class TodoManager {
         }
         return todos
     }
+    
+    func checkLogin(_ email: String,_ password: String) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: userTable)
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            for data in results as! [NSManagedObject] {
+                let emailCoreData = data.value(forKey: emailKey) as! String
+                let passwordCoreData = data.value(forKey: passwordKey) as! String
+                if (email.elementsEqual(emailCoreData) == true && password.elementsEqual(passwordCoreData) == true) {
+                    return true
+                }
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+        return false
+    }
+    
 }
 
 

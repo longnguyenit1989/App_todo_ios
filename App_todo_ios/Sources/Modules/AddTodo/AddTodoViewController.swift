@@ -29,8 +29,8 @@ class AddTodoViewController: BaseViewController {
     }
     
     @objc func addButtonTapped() {
-        let title = titleTextField.text ?? ""
-        let content = contentTextField.text ?? ""
+        let title = titleTextField.text?.trim ?? ""
+        let content = contentTextField.text?.trim ?? ""
         addTodoViewModel.addTodo(title: title, content: content)
         
         if(addTodoViewModel.todo != nil) {

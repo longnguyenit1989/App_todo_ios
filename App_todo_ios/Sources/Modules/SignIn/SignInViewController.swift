@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MPInjector
 
 class SignInViewController: BaseViewController {
     
@@ -14,6 +15,8 @@ class SignInViewController: BaseViewController {
     @IBOutlet weak var passwordTextField: CustomPrimaryTextField!
     @IBOutlet weak var signUpLabel: UILabel!
     @IBOutlet weak var forgotPassLabel: UILabel!
+    
+    @Inject var signInViewModel: SignInViewModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +53,19 @@ class SignInViewController: BaseViewController {
     }
     
     @objc func signInButtonTapped() {
-        let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
-        UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
-        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+        let email = emailTextField.text?.trim ?? ""
+        let password = passwordTextField.text?.trim ?? ""
+        
+        if(email.isEmpty || password.isEmpty) {
+            showToast(message: "Please fill all your infor")
+        } else if (email.isValidEmail == false) {
+            showToast(message: "Your email is invalid")
+        } else if (self.signInViewModel.login(email, password) == false) {
+            showToast(message: "Your email or password wrong, please check.")
+        } else {
+            let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
+            UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
+            UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+        }
     }
 }
