@@ -12,9 +12,10 @@ class HomeViewModel {
     var todoArray: [Todo] = []
     
     @Inject var todoManager: TodoManager
+    @Inject var localStorageRepository: LocalStorageRepository
     
     init() {
-        todoArray = todoManager.fetchTodos()
+        todoArray = todoManager.fetchTodos(email: localStorageRepository.getEmail() ?? "")
     }
     
     func saveTodo(_ todo: Todo) {

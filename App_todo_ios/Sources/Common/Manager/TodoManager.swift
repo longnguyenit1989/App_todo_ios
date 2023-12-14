@@ -16,6 +16,7 @@ class TodoManager {
     private let titleKey = "title"
     private let contentKey = "content"
     private let statusKey = "status"
+    private let emailKeyTodo = "email"
     
     private let userTable = "User"
     private let fullNameKey = "fullName"
@@ -40,6 +41,7 @@ class TodoManager {
             todoEntity.setValue(todo.title, forKey: titleKey)
             todoEntity.setValue(todo.content, forKey: contentKey)
             todoEntity.setValue(todo.status.rawValue, forKey: statusKey)
+            todoEntity.setValue(todo.email, forKey: emailKeyTodo)
             managedContextSave()
         }
     }
@@ -52,6 +54,7 @@ class TodoManager {
         todoEntity.setValue(todo.title, forKey: titleKey)
         todoEntity.setValue(todo.content, forKey: contentKey)
         todoEntity.setValue(todo.status.rawValue, forKey: statusKey)
+        todoEntity.setValue(todo.email, forKey: emailKeyTodo)
         managedContextSave()
     }
     
@@ -87,28 +90,30 @@ class TodoManager {
     func managedContextSave() {
         do {
             try managedContext.save()
-        } catch let error as NSError {
+        } catch {
             
         }
     }
     
-    func fetchTodos() -> [Todo] {
+    func fetchTodos(email: String) -> [Todo] {
         var todos: [Todo] = []
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: todoTable)
         
         do {
             let results = try managedContext.fetch(fetchRequest)
             for data in results as! [NSManagedObject] {
-                let id = data.value(forKey: idKey) as! Int64
-                let title = data.value(forKey: titleKey) as! String
-                let content = data.value(forKey: contentKey) as! String
-                let statusRawValue = data.value(forKey: statusKey) as! String
-                let status = StatusTodo(rawValue: statusRawValue) ?? StatusTodo.working
-                
-                let todo = Todo(id, title, content, status)
-                todos.append(todo)
+                let emailCoreData = data.value(forKey: emailKeyTodo) as! String
+                if (email.elementsEqual(emailCoreData)) {
+                    let id = data.value(forKey: idKey) as! Int64
+                    let title = data.value(forKey: titleKey) as! String
+                    let content = data.value(forKey: contentKey) as! String
+                    let statusRawValue = data.value(forKey: statusKey) as! String
+                    let status = StatusTodo(rawValue: statusRawValue) ?? StatusTodo.working
+                    let todo = Todo(id, title, content, status, email)
+                    todos.append(todo)
+                }
             }
-        } catch let error as NSError {
+        } catch {
             
         }
         return todos
@@ -126,7 +131,7 @@ class TodoManager {
                     return true
                 }
             }
-        } catch let error as NSError {
+        } catch {
             
         }
         
@@ -147,7 +152,7 @@ class TodoManager {
                     break
                 }
             }
-        } catch let error as NSError {
+        } catch {
             return nil
         }
         return user
