@@ -16,6 +16,12 @@ class HomeViewController: BaseViewController {
     
     @Inject var homeViewModel: HomeViewModel
     
+    private static let settingTitle = "Setting"
+    private static let IdentifyPlantTitle = "Identify Plant"
+    private static let plantDiaryTitle = "Plant's diary"
+    private static let plantNotificationTitle = "Plant's notifications"
+    private static let removePlantTitle = "Remove plant"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,7 +33,35 @@ class HomeViewController: BaseViewController {
     override func setupUi() {
         addFloatingButton()
         setNavigationBar(title: "HOME")
+        setPopupMenuNavigationBar()
         setTaskCollectionView()
+    }
+    
+    func setPopupMenuNavigationBar() {
+        let menuHandler: UIActionHandler = { action in
+            switch action.title {
+            case HomeViewController.settingTitle:
+                self.toSettingScreen()
+            default:
+                self.showToast(message: "Function not available")
+            }
+        }
+        
+        let barButtonMenu = UIMenu(title: "", children: [
+            UIAction(title: NSLocalizedString(HomeViewController.settingTitle, comment: ""), image: UIImage(systemName: "gear") ,handler: menuHandler),
+            UIAction(title: NSLocalizedString(HomeViewController.IdentifyPlantTitle, comment: ""), image: UIImage(systemName: "viewfinder"), handler: menuHandler),
+            UIAction(title: NSLocalizedString(HomeViewController.plantDiaryTitle, comment: ""), image: UIImage(systemName: "books.vertical"), handler: menuHandler),
+            UIAction(title: NSLocalizedString(HomeViewController.plantNotificationTitle, comment: ""), image: UIImage(systemName: "bell"), handler: menuHandler),
+            UIAction(title: NSLocalizedString(HomeViewController.removePlantTitle, comment: ""), image: UIImage(systemName: "trash"), handler: menuHandler)
+        ])
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Manage", style: .plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem?.menu = barButtonMenu
+    }
+    
+    func toSettingScreen() {
+        let settingVC = UIStoryboard(name: "Setting", bundle: .main).instantiateViewController(withIdentifier: "SettingViewController")
+        navigationController?.pushViewController(settingVC, animated: true)
     }
     
     func setTaskCollectionView() {

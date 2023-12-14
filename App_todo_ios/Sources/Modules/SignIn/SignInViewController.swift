@@ -21,11 +21,7 @@ class SignInViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        checkLoggined()
-    }
-    
+
     override func setupUi() {
         super.setupUi()
         setUiAndClickSignUpLabel()
@@ -34,19 +30,6 @@ class SignInViewController: BaseViewController {
         let tapForgotPassGesture = UITapGestureRecognizer(target: self, action: #selector(forgotPassTapped))
         forgotPassLabel.isUserInteractionEnabled = true
         forgotPassLabel.addGestureRecognizer(tapForgotPassGesture)
-    }
-    
-    func checkLoggined() {
-        let emailStorage = self.signInViewModel.getEmailStorage()
-        if (emailStorage != nil && emailStorage?.isEmpty == false) {
-            toHomeAndSetRootViewcontroller()
-        }
-    }
-    
-    func toHomeAndSetRootViewcontroller() {
-        let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
-        UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
-        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
     }
     
     func setUiAndClickSignUpLabel() {
@@ -61,6 +44,7 @@ class SignInViewController: BaseViewController {
     }
     
     @objc func signUpLabelTapped() {
+        print("signUpLabelTapped")
         let signUpVC = UIStoryboard(name: "SignUp", bundle: .main).instantiateViewController(withIdentifier: "SignUpViewController")
         navigationController?.pushViewController(signUpVC, animated: true)
     }
@@ -84,4 +68,11 @@ class SignInViewController: BaseViewController {
             toHomeAndSetRootViewcontroller()
         }
     }
+    
+    func toHomeAndSetRootViewcontroller() {
+        let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
+        UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
+        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+    }
+    
 }

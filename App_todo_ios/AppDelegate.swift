@@ -7,10 +7,13 @@
 
 import UIKit
 import CoreData
+import MPInjector
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
+    @Inject var localStorage: LocalStorageRepository
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "TodoEntities")
@@ -23,12 +26,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        window = UIWindow(frame: UIScreen.main.bounds)
-        let loginViewController = UIStoryboard(name: "SignIn", bundle: Bundle.main).instantiateViewController(withIdentifier: "NavigationSignInViewController")
-        window?.rootViewController = loginViewController
-        window?.makeKeyAndVisible()
+        handleScreen()
         return true
+    }
+    
+    func handleScreen() {
+        let emailStorage = self.localStorage.getEmail()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if (emailStorage != nil && emailStorage?.isEmpty == false) {
+            // logined
+            let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
+            window?.rootViewController = homeVC
+        } else {
+            // not login
+            let signInVC = UIStoryboard(name: "SignIn", bundle: Bundle.main).instantiateViewController(withIdentifier: "NavigationSignInViewController")
+            window?.rootViewController = signInVC
+        }
+        window?.makeKeyAndVisible()
     }
 }
 

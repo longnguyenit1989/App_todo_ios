@@ -44,6 +44,10 @@
 		FBA72C842B1DD216002C7A14 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C832B1DD216002C7A14 /* HomeViewModel.swift */; };
 		FBA72C882B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C862B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.swift */; };
 		FBA72C892B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA72C872B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib */; };
+		FBAA45932B2AB93E00C7D4D2 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAA45922B2AB93E00C7D4D2 /* Setting.storyboard */; };
+		FBAA45952B2AB96700C7D4D2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA45942B2AB96700C7D4D2 /* SettingViewController.swift */; };
+		FBAA45972B2AB98500C7D4D2 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA45962B2AB98500C7D4D2 /* SettingViewModel.swift */; };
+		FBAA45992B2B018400C7D4D2 /* CustomRedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA45982B2B018400C7D4D2 /* CustomRedButton.swift */; };
 		FBAF0ADD2B205B030076466C /* EditTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAF0ADC2B205B030076466C /* EditTodo.storyboard */; };
 		FBAF0ADF2B205B180076466C /* EditTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF0ADE2B205B180076466C /* EditTodoViewController.swift */; };
 		FBAF0AE12B20695A0076466C /* EditTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF0AE02B20695A0076466C /* EditTodoViewModel.swift */; };
@@ -115,6 +119,10 @@
 		FBA72C832B1DD216002C7A14 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		FBA72C862B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTodoCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		FBA72C872B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskTodoCellCollectionViewCell.xib; sourceTree = "<group>"; };
+		FBAA45922B2AB93E00C7D4D2 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		FBAA45942B2AB96700C7D4D2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		FBAA45962B2AB98500C7D4D2 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		FBAA45982B2B018400C7D4D2 /* CustomRedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRedButton.swift; sourceTree = "<group>"; };
 		FBAF0ADC2B205B030076466C /* EditTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTodo.storyboard; sourceTree = "<group>"; };
 		FBAF0ADE2B205B180076466C /* EditTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewController.swift; sourceTree = "<group>"; };
 		FBAF0AE02B20695A0076466C /* EditTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewModel.swift; sourceTree = "<group>"; };
@@ -267,6 +275,7 @@
 		FB3A37AC2B1826CF00C9FD29 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FBAA45912B2AB92500C7D4D2 /* Setting */,
 				FBAF0ADB2B205AE60076466C /* EditTodo */,
 				FBA72C732B1DAC49002C7A14 /* AddTodo */,
 				FB3A37C02B1984EF00C9FD29 /* Home */,
@@ -299,6 +308,7 @@
 			children = (
 				FB3A37B72B183E3200C9FD29 /* CustomPrimaryButtton.swift */,
 				FB3A37B92B1841B100C9FD29 /* CustomPrimaryTextField.swift */,
+				FBAA45982B2B018400C7D4D2 /* CustomRedButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -386,6 +396,16 @@
 				FBA72C872B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib */,
 			);
 			path = TaskCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		FBAA45912B2AB92500C7D4D2 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				FBAA45922B2AB93E00C7D4D2 /* Setting.storyboard */,
+				FBAA45942B2AB96700C7D4D2 /* SettingViewController.swift */,
+				FBAA45962B2AB98500C7D4D2 /* SettingViewModel.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		FBAF0ADB2B205AE60076466C /* EditTodo */ = {
@@ -512,6 +532,7 @@
 				FBA72C752B1DAC68002C7A14 /* AddTodo.storyboard in Resources */,
 				FB3A37BD2B18713900C9FD29 /* SignUp.storyboard in Resources */,
 				FBA72C892B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib in Resources */,
+				FBAA45932B2AB93E00C7D4D2 /* Setting.storyboard in Resources */,
 				FB3A37842B15D48800C9FD29 /* Assets.xcassets in Resources */,
 				FBAF0ADD2B205B030076466C /* EditTodo.storyboard in Resources */,
 				FB3A37822B15D48600C9FD29 /* SignIn.storyboard in Resources */,
@@ -654,6 +675,7 @@
 				FBAF0ADF2B205B180076466C /* EditTodoViewController.swift in Sources */,
 				FB1F0E9C2B285C50009FA9DB /* Storage.swift in Sources */,
 				FBA72C802B1DC854002C7A14 /* AddTodoViewModel.swift in Sources */,
+				FBAA45972B2AB98500C7D4D2 /* SettingViewModel.swift in Sources */,
 				FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */,
 				FB3A37B82B183E3200C9FD29 /* CustomPrimaryButtton.swift in Sources */,
 				FBA72C7E2B1DC7CC002C7A14 /* AppInjector.swift in Sources */,
@@ -661,9 +683,11 @@
 				FB4ABF772B22BB8D0097D848 /* TodoManager.swift in Sources */,
 				FB3A37B52B1834CD00C9FD29 /* BaseViewController.swift in Sources */,
 				FBA72C882B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.swift in Sources */,
+				FBAA45952B2AB96700C7D4D2 /* SettingViewController.swift in Sources */,
 				FB3A377B2B15D48600C9FD29 /* AppDelegate.swift in Sources */,
 				FB3A37C42B19851D00C9FD29 /* HomeViewController.swift in Sources */,
 				FB4ABF7D2B22F3400097D848 /* TodoEntities.xcdatamodeld in Sources */,
+				FBAA45992B2B018400C7D4D2 /* CustomRedButton.swift in Sources */,
 				FB1F0E9A2B2842A3009FA9DB /* SignInViewModel.swift in Sources */,
 				FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */,
 				FB1F0E9F2B285DCA009FA9DB /* KeychainStorage.swift in Sources */,

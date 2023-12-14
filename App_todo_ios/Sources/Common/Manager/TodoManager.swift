@@ -18,6 +18,7 @@ class TodoManager {
     private let statusKey = "status"
     
     private let userTable = "User"
+    private let fullNameKey = "fullName"
     private let emailKey = "email"
     private let passwordKey = "password"
     
@@ -58,6 +59,7 @@ class TodoManager {
         let entity = NSEntityDescription.entity(forEntityName: userTable, in: managedContext)!
         let userEntity = NSManagedObject(entity: entity, insertInto: managedContext)
         
+        userEntity.setValue(user.fullName, forKey: fullNameKey)
         userEntity.setValue(user.email, forKey: emailKey)
         userEntity.setValue(user.password, forKey: passwordKey)
         managedContextSave()
@@ -78,7 +80,7 @@ class TodoManager {
             }
             managedContextSave()
         } catch {
-            print("Error updating Todo: \(error)")
+            
         }
     }
     
@@ -86,7 +88,7 @@ class TodoManager {
         do {
             try managedContext.save()
         } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+            
         }
     }
     
@@ -107,7 +109,7 @@ class TodoManager {
                 todos.append(todo)
             }
         } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+            
         }
         return todos
     }
@@ -125,10 +127,30 @@ class TodoManager {
                 }
             }
         } catch let error as NSError {
-            print("Could not fetch. \(error), \(error.userInfo)")
+            
         }
         
         return false
+    }
+    
+    func getUserByEmail(email: String) -> User? {
+        var user: User!
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: userTable)
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            for data in results as! [NSManagedObject] {
+                let emailCoreData = data.value(forKey: emailKey) as! String
+                if (email.elementsEqual(emailCoreData) == true) {
+                    let fullName = data.value(forKey: fullNameKey) as! String
+                    let password = data.value(forKey: passwordKey) as! String
+                    user = User(fullName, emailCoreData, password)
+                    break
+                }
+            }
+        } catch let error as NSError {
+            return nil
+        }
+        return user
     }
     
 }

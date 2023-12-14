@@ -8,10 +8,12 @@
 import Foundation
 
 struct User {
+    var fullName: String
     var email: String
     var password: String
     
-    init(_ email: String,_ password: String) {
+    init(_ fullName: String, _ email: String,_ password: String) {
+        self.fullName = fullName
         self.email = email
         self.password = password
     }
