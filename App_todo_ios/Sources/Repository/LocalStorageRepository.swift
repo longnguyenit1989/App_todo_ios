@@ -9,23 +9,24 @@ import Foundation
 import MPInjector
 
 protocol LocalStorageRepository {
-    func getEmail() -> String?
-    func setEmail(newValue: String)
-    func clearEmail()
+    func getUser() -> User?
+    func setUser(user: User)
+    
+    func clearUser()
 }
 
 final class LocalStorage: LocalStorageRepository {
     @Inject var storage: Storage
     
-    func getEmail() -> String? {
-        storage.getString(key: StorageConstants.email)
+    func getUser() -> User? {
+        storage.getObject(key: StorageConstants.user, type: User.self)
     }
     
-    func setEmail(newValue: String) {
-        storage.setString(key: StorageConstants.email, value: newValue)
+    func setUser(user: User) {
+        storage.setObject(key: StorageConstants.user, value: user)
     }
     
-    func clearEmail() {
-        storage.removeKey(key: StorageConstants.email)
+    func clearUser() {
+        storage.removeKey(key: StorageConstants.user)
     }
 }

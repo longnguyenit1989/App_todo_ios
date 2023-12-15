@@ -12,11 +12,11 @@ class SettingViewModel {
     @Inject var localStorage: LocalStorageRepository
     @Inject var todoManager: TodoManager
     
-    func clearEmail() {
-        localStorage.clearEmail()
+    func clearUser() {
+        localStorage.clearUser()
     }
     
-    func getUserByEmail() -> User? {
-        return todoManager.getUserByEmail(email: localStorage.getEmail() ?? "")
+    func getUser() -> User? {
+        return localStorage.getUser()
     }
 }

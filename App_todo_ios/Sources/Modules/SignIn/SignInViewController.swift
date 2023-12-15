@@ -44,7 +44,6 @@ class SignInViewController: BaseViewController {
     }
     
     @objc func signUpLabelTapped() {
-        print("signUpLabelTapped")
         let signUpVC = UIStoryboard(name: "SignUp", bundle: .main).instantiateViewController(withIdentifier: "SignUpViewController")
         navigationController?.pushViewController(signUpVC, animated: true)
     }
@@ -64,7 +63,6 @@ class SignInViewController: BaseViewController {
         } else if (self.signInViewModel.login(email, password) == false) {
             showToast(message: "Your email or password wrong, please check.")
         } else {
-            self.signInViewModel.setEmailStorage(email: email)
             toHomeAndSetRootViewcontroller()
         }
     }

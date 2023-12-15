@@ -8,7 +8,7 @@
 import Foundation
 
 enum StorageConstants {
-    static let email = "email"
+    static let user = "user"
 }
 
 protocol Storage {
@@ -26,6 +26,9 @@ protocol Storage {
     
     func setArray(key: String, value: [Int])
     func getArray(key: String) -> [Int]?
+    
+    func setObject<T: Encodable>(key: String, value: T)
+    func getObject<T: Decodable>(key: String, type: T.Type) -> T?
     
     func removeKey(key: String)
     func clear()

@@ -19,6 +19,7 @@ extension MPInjector: Registering {
         
         // MARK: Manager
         registerSingleton { TodoManager() }
+        registerSingleton { DialogManager() }
         
         // MARK: Storage
         registerSingleton { KeychainStorage() as Storage }

@@ -48,6 +48,7 @@
 		FBAA45952B2AB96700C7D4D2 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA45942B2AB96700C7D4D2 /* SettingViewController.swift */; };
 		FBAA45972B2AB98500C7D4D2 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA45962B2AB98500C7D4D2 /* SettingViewModel.swift */; };
 		FBAA45992B2B018400C7D4D2 /* CustomRedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA45982B2B018400C7D4D2 /* CustomRedButton.swift */; };
+		FBAA459D2B2BF64400C7D4D2 /* DialogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA459C2B2BF64400C7D4D2 /* DialogManager.swift */; };
 		FBAF0ADD2B205B030076466C /* EditTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBAF0ADC2B205B030076466C /* EditTodo.storyboard */; };
 		FBAF0ADF2B205B180076466C /* EditTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF0ADE2B205B180076466C /* EditTodoViewController.swift */; };
 		FBAF0AE12B20695A0076466C /* EditTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF0AE02B20695A0076466C /* EditTodoViewModel.swift */; };
@@ -123,6 +124,7 @@
 		FBAA45942B2AB96700C7D4D2 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		FBAA45962B2AB98500C7D4D2 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		FBAA45982B2B018400C7D4D2 /* CustomRedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRedButton.swift; sourceTree = "<group>"; };
+		FBAA459C2B2BF64400C7D4D2 /* DialogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogManager.swift; sourceTree = "<group>"; };
 		FBAF0ADC2B205B030076466C /* EditTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTodo.storyboard; sourceTree = "<group>"; };
 		FBAF0ADE2B205B180076466C /* EditTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewController.swift; sourceTree = "<group>"; };
 		FBAF0AE02B20695A0076466C /* EditTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTodoViewModel.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				FB4ABF762B22BB8D0097D848 /* TodoManager.swift */,
+				FBAA459C2B2BF64400C7D4D2 /* DialogManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 			files = (
 				FB1F0E982B28390C009FA9DB /* UIViewController+Extensions.swift in Sources */,
 				FBAF0AE12B20695A0076466C /* EditTodoViewModel.swift in Sources */,
+				FBAA459D2B2BF64400C7D4D2 /* DialogManager.swift in Sources */,
 				FB3A37BA2B1841B100C9FD29 /* CustomPrimaryTextField.swift in Sources */,
 				FBA72C822B1DD13B002C7A14 /* Time+Extension.swift in Sources */,
 				FB3A37BF2B18765A00C9FD29 /* SignUpViewController.swift in Sources */,

@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func handleScreen() {
-        let emailStorage = self.localStorage.getEmail()
+        let emailStorage = self.localStorage.getUser()?.email
         window = UIWindow(frame: UIScreen.main.bounds)
         
         if (emailStorage != nil && emailStorage?.isEmpty == false) {

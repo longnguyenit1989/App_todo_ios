@@ -15,6 +15,7 @@ class SettingViewController: BaseViewController {
     @IBOutlet weak var emailValueLabel: UILabel!
     
     @Inject var settingViewModel: SettingViewModel
+    @Inject var dialogManager: DialogManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,17 +28,19 @@ class SettingViewController: BaseViewController {
     }
     
     func setInforProfileFromCoreData() {
-        if let user = settingViewModel.getUserByEmail() {
+        if let user = settingViewModel.getUser() {
             self.fullNameValueLabel.text = user.fullName
             self.emailValueLabel.text = user.email
         }
     }
     
     @objc func signOutButtonTapped() {
-        settingViewModel.clearEmail()
-        
-        let signInVC = UIStoryboard(name: "SignIn", bundle: .main).instantiateViewController(withIdentifier: "NavigationSignInViewController")
-        UIApplication.shared.currentUIWindow()?.rootViewController = signInVC
-        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+        dialogManager.showDialog(typeDialog: TypeDialog.OPTION_DIALOG, title: "LOGOUT DIALOG",message: "Do you want to logout ?", yesButtonLabel: "Logout", yesCallback: {
+            self.settingViewModel.clearUser()
+            
+            let signInVC = UIStoryboard(name: "SignIn", bundle: .main).instantiateViewController(withIdentifier: "NavigationSignInViewController")
+            UIApplication.shared.currentUIWindow()?.rootViewController = signInVC
+            UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+        })
     }
 }

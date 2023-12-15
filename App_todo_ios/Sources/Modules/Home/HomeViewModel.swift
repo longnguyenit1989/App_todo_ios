@@ -15,7 +15,7 @@ class HomeViewModel {
     @Inject var localStorageRepository: LocalStorageRepository
     
     init() {
-        todoArray = todoManager.fetchTodos(email: localStorageRepository.getEmail() ?? "")
+        todoArray = todoManager.fetchTodos(email: localStorageRepository.getUser()?.email ?? "")
     }
     
     func saveTodo(_ todo: Todo) {

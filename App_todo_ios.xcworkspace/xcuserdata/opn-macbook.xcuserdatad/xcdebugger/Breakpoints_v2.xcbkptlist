@@ -3,4 +3,134 @@
    uuid = "3A6EE38C-651E-43B5-9FF7-5227E6881698"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8418942B-E7CB-4D18-AF30-4CF76CCED4D5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App_todo_ios/Sources/Common/Manager/TodoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "saveUser(_:callbackError:callbackSuccess:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D7B00039-AC08-4EBD-9933-23B131E29EB3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App_todo_ios/Sources/Common/Manager/TodoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "saveUser(_:callbackError:callbackSuccess:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "088DE842-0E92-4F95-A42B-69F395683301"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App_todo_ios/Sources/Common/Manager/TodoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "saveUser(_:callbackError:callbackSuccess:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DDE4506-D1BF-4D39-93AA-2E3258F492EC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App_todo_ios/Sources/Common/Manager/TodoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "saveUser(_:callbackError:callbackSuccess:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7DDE4506-D1BF-4D39-93AA-2E3258F492EC - b0e5796b2c56cca4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "App_todo_ios.TodoManager.saveUser(_: App_todo_ios.User, callbackError: Swift.Optional&lt;(Swift.String) -&gt; ()&gt;, callbackSuccess: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "App_todo_ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/opn-macbook/App_todo_ios/App_todo_ios/App_todo_ios/Sources/Common/Manager/TodoManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "701">
+               </Location>
+               <Location
+                  uuid = "7DDE4506-D1BF-4D39-93AA-2E3258F492EC - b0e5796b2c56cca4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "App_todo_ios.TodoManager.saveUser(_: App_todo_ios.User, callbackError: Swift.Optional&lt;(Swift.String) -&gt; ()&gt;, callbackSuccess: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "App_todo_ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/opn-macbook/App_todo_ios/App_todo_ios/App_todo_ios/Sources/Common/Manager/TodoManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "867">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "808D2D69-F598-4DDE-97E7-614DEC6DE644"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App_todo_ios/Sources/Common/Manager/TodoManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "saveUser(_:callbackError:callbackSuccess:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06090F31-63BC-46F1-841C-23067C8F5285"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "App_todo_ios/Sources/Modules/SignUp/SignUpViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "saveUser(_:_:_:callbackError:callbackSuccess:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

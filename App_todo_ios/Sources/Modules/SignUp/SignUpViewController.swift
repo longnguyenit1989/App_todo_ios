@@ -38,11 +38,13 @@ class SignUpViewController: BaseViewController {
         } else if (password != confirmPassword) {
             showToast(message: "Please fill same password and confirmPassword")
         } else {
-            showToast(message: "Register success")
-            self.signUpViewModel.saveUser(fullName, email, password)
-            let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
-            UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
-            UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+            self.signUpViewModel.saveUser(fullName, email, password, callbackError: {message in
+                self.showToast(message: message)
+            }, callbackSuccess: {
+                let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
+                UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
+                UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+            })
         }
     }
     

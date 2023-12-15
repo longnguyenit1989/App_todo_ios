@@ -13,9 +13,12 @@ class SignUpViewModel {
     @Inject var localStorageRepository: LocalStorageRepository
     @Inject var todoManager: TodoManager
     
-    func saveUser(_ fullName: String, _ email: String,_ password: String) {
+    func saveUser(_ fullName: String, _ email: String,_ password: String, callbackError: ((String) -> Void)? = nil, callbackSuccess: (() -> Void)? = nil) {
         let user = User(fullName, email, password)
-        todoManager.saveUser(user)
-        localStorageRepository.setEmail(newValue: email)
+        todoManager.saveUser(user, callbackError: { message in
+            callbackError?(message)
+        }, callbackSuccess: {
+            callbackSuccess?()
+        })
     }
 }

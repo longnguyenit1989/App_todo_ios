@@ -54,13 +54,34 @@ final class KeychainStorage: Storage {
     }
     
     func setArray(key: String, value: [Int]) {
-        let data = try? JSONSerialization.data(withJSONObject: value)
-        set(data, key)
+        let dataString = try? JSONSerialization.data(withJSONObject: value)
+        set(dataString, key)
     }
     
     func getArray(key: String) -> [Int]? {
         guard let data = getData(key) else { return nil }
         return (try? JSONSerialization.jsonObject(with: data)) as? [Int]
+    }
+    
+    func setObject<T: Encodable>(key: String, value: T) {
+        do {
+            let jsonData = try JSONEncoder().encode(value)
+            set(jsonData, key)
+        } catch {
+            print("Error converting \(T.self) to JSON: \(error)")
+        }
+    }
+    
+    func getObject<T: Decodable>(key: String, type: T.Type) -> T? {
+        guard let data = getData(key) else { return nil }
+        
+        do {
+            let object = try JSONDecoder().decode(type, from: data)
+            return object
+        } catch {
+            print("Error decoding object of type \(T.self): \(error)")
+            return nil
+        }
     }
     
     func removeKey(key: String) {

@@ -23,7 +23,7 @@ class TodoManager {
     private let emailKey = "email"
     private let passwordKey = "password"
     
-    @Inject var storage: Storage
+    @Inject var localStorageRepository: LocalStorageRepository
     
     lazy var managedContext: NSManagedObjectContext = {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -58,14 +58,31 @@ class TodoManager {
         managedContextSave()
     }
     
-    func saveUser(_ user: User) {
+    func saveUser(_ user: User, callbackError: ((String) -> Void)? = nil, callbackSuccess: (() -> Void)? = nil) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: userTable)
+        
+        do {
+            let results = try managedContext.fetch(fetchRequest)
+            for data in results as! [NSManagedObject] {
+                let emailCoreData = data.value(forKey: emailKey) as! String
+                if (user.email.elementsEqual(emailCoreData)) {
+                    callbackError?("Your email is exist, change other email !")
+                    return
+                }
+            }
+        } catch {
+            
+        }
+        
         let entity = NSEntityDescription.entity(forEntityName: userTable, in: managedContext)!
         let userEntity = NSManagedObject(entity: entity, insertInto: managedContext)
         
         userEntity.setValue(user.fullName, forKey: fullNameKey)
         userEntity.setValue(user.email, forKey: emailKey)
         userEntity.setValue(user.password, forKey: passwordKey)
+        localStorageRepository.setUser(user: user)
         managedContextSave()
+        callbackSuccess?()
     }
     
     func updateTodo(_ updatedTodo: Todo) {
@@ -124,10 +141,12 @@ class TodoManager {
         do {
             let results = try managedContext.fetch(fetchRequest)
             for data in results as! [NSManagedObject] {
+                let fullNameCoreData = data.value(forKey: fullNameKey) as! String
                 let emailCoreData = data.value(forKey: emailKey) as! String
                 let passwordCoreData = data.value(forKey: passwordKey) as! String
                 if (email.elementsEqual(emailCoreData) == true && password.elementsEqual(passwordCoreData) == true) {
-                    storage.setString(key: StorageConstants.email, value: email)
+                    let user = User(fullNameCoreData, emailCoreData, passwordCoreData)
+                    self.localStorageRepository.setUser(user: user)
                     return true
                 }
             }
@@ -136,26 +155,6 @@ class TodoManager {
         }
         
         return false
-    }
-    
-    func getUserByEmail(email: String) -> User? {
-        var user: User!
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: userTable)
-        do {
-            let results = try managedContext.fetch(fetchRequest)
-            for data in results as! [NSManagedObject] {
-                let emailCoreData = data.value(forKey: emailKey) as! String
-                if (email.elementsEqual(emailCoreData) == true) {
-                    let fullName = data.value(forKey: fullNameKey) as! String
-                    let password = data.value(forKey: passwordKey) as! String
-                    user = User(fullName, emailCoreData, password)
-                    break
-                }
-            }
-        } catch {
-            return nil
-        }
-        return user
     }
     
 }
