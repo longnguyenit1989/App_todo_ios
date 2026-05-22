@@ -8,12 +8,25 @@
 import Foundation
 import MPInjector
 
-class SignInViewModel {
-    
+enum SignInState {
+    case success
+    case emptyFields
+    case invalidEmail
+    case wrongCredentials
+}
+
+final class SignInViewModel {
     @Inject var todoManager: TodoManager
     @Inject var localStorage: LocalStorageRepository
     
-    func login(_ email: String, _ password: String) -> Bool {
-        return todoManager.checkLogin(email, password)
+    func login(email: String, password: String) -> SignInState {
+        if email.isEmpty || password.isEmpty {
+            return .emptyFields
+        }
+        if email.isValidEmail == false {
+            return .invalidEmail
+        }
+        let success = todoManager.checkLogin(email, password)
+        return success ? .success : .wrongCredentials
     }
 }

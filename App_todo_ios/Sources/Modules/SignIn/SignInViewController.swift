@@ -18,10 +18,6 @@ class SignInViewController: BaseViewController {
     
     @Inject var signInViewModel: SignInViewModel
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     override func setupUi() {
         super.setupUi()
         setUiAndClickSignUpLabel()
@@ -32,7 +28,7 @@ class SignInViewController: BaseViewController {
         forgotPassLabel.addGestureRecognizer(tapForgotPassGesture)
     }
     
-    func setUiAndClickSignUpLabel() {
+    private func setUiAndClickSignUpLabel() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(signUpLabelTapped))
         signUpLabel.isUserInteractionEnabled = true
         signUpLabel.addGestureRecognizer(tapGesture)
@@ -43,34 +39,42 @@ class SignInViewController: BaseViewController {
         signUpLabel.attributedText = attributedString
     }
     
-    @objc func signUpLabelTapped() {
-        let signUpVC = UIStoryboard(name: "SignUp", bundle: .main).instantiateViewController(withIdentifier: "SignUpViewController")
+    @objc private func signUpLabelTapped() {
+        let signUpVC = UIStoryboard(name: "SignUp", bundle: nil).instantiate(SignUpViewController.self)
         navigationController?.pushViewController(signUpVC, animated: true)
     }
     
-    @objc func forgotPassTapped() {
+    @objc private func forgotPassTapped() {
         print("forgotPassTapped")
     }
     
-    @objc func signInButtonTapped() {
+    @objc private func signInButtonTapped() {
         let email = emailTextField.text?.trim ?? ""
         let password = passwordTextField.text?.trim ?? ""
-        
-        if(email.isEmpty || password.isEmpty) {
-            showToast(message: "Please fill all your infor")
-        } else if (email.isValidEmail == false) {
-            showToast(message: "Your email is invalid")
-        } else if (self.signInViewModel.login(email, password) == false) {
-            showToast(message: "Your email or password wrong, please check.")
-        } else {
+        let state = signInViewModel.login(email: email, password: password)
+        handleSignIn(state)
+    }
+    
+    private func handleSignIn(_ state: SignInState) {
+        switch state {
+        case .emptyFields:
+            showToast(message: "Please fill all information")
+        case .invalidEmail:
+            showToast(message: "Invalid email")
+        case .wrongCredentials:
+            showToast(message: "Wrong email or password")
+        case .success:
             toHomeAndSetRootViewcontroller()
         }
     }
     
-    func toHomeAndSetRootViewcontroller() {
-        let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeNavigationViewController")
-        UIApplication.shared.currentUIWindow()?.rootViewController = homeVC
-        UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
+    private func toHomeAndSetRootViewcontroller() {
+        let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiate(HomeViewController.self)
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = scene.windows.first {
+            window.rootViewController = homeVC
+            window.makeKeyAndVisible()
+        }
     }
     
 }

@@ -25,4 +25,8 @@ class HomeViewModel {
     func updateTodo(_ updatedTodo: Todo) {
         todoManager.updateTodo(updatedTodo)
     }
+    
+    func hasTodo() -> Bool {
+        return todoArray.count > 0
+    }
 }

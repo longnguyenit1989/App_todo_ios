@@ -22,22 +22,19 @@ class HomeViewController: BaseViewController {
     private static let plantNotificationTitle = "Plant's notifications"
     private static let removePlantTitle = "Remove plant"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        headerView.isHidden = homeViewModel.todoArray.count <= 0
-    }
-    
     override func setupUi() {
         addFloatingButton()
         setNavigationBar(title: "HOME")
         setPopupMenuNavigationBar()
         setTaskCollectionView()
+        showTitleTodo()
     }
     
-    func setPopupMenuNavigationBar() {
+    private func showTitleTodo() {
+        headerView.isHidden = !homeViewModel.hasTodo()
+    }
+    
+    private func setPopupMenuNavigationBar() {
         let menuHandler: UIActionHandler = { action in
             switch action.title {
             case HomeViewController.settingTitle:
@@ -59,12 +56,12 @@ class HomeViewController: BaseViewController {
         self.navigationItem.rightBarButtonItem?.menu = barButtonMenu
     }
     
-    func toSettingScreen() {
+    private func toSettingScreen() {
         let settingVC = UIStoryboard(name: "Setting", bundle: .main).instantiateViewController(withIdentifier: "SettingViewController")
         navigationController?.pushViewController(settingVC, animated: true)
     }
     
-    func setTaskCollectionView() {
+    private func setTaskCollectionView() {
         taskCollectionView.dataSource = self
         taskCollectionView.delegate = self
         let nib = UINib(nibName: "TaskTodoCellCollectionViewCell", bundle: .main)
@@ -81,9 +78,8 @@ class HomeViewController: BaseViewController {
         taskCollectionView.collectionViewLayout = layout
     }
     
-    @objc func floatingAddButtonTapped() {
-        let addTodoVC = UIStoryboard(name: "AddTodo", bundle: .main).instantiateViewController(withIdentifier: "AddTodoViewController") as! AddTodoViewController
-        
+    @objc private func floatingAddButtonTapped() {
+        let addTodoVC = UIStoryboard(name: "AddTodo", bundle: nil).instantiate(AddTodoViewController.self)
         addTodoVC.addTodoCallBackCompletion = { [self] todoAdded in
             if(todoAdded != nil) {
                 self.navigationController?.popViewController(animated: true)
@@ -96,7 +92,7 @@ class HomeViewController: BaseViewController {
         self.navigationController?.pushViewController(addTodoVC, animated: true)
     }
     
-    func addFloatingButton() {
+    private func addFloatingButton() {
         let floaty = Floaty()
         floaty.plusColor = UIColor.white
         floaty.buttonColor = view.tintColor
@@ -125,7 +121,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedTodo = homeViewModel.todoArray[indexPath.row]
-        let editTodoVC = UIStoryboard(name: "EditTodo", bundle: .main).instantiateViewController(withIdentifier: "EditTodoViewController") as! EditTodoViewController
+        let editTodoVC = UIStoryboard(name: "EditTodo", bundle: nil).instantiate(EditTodoViewController.self)
         editTodoVC.selectedTodo = selectedTodo
         
         editTodoVC.editTodoCallBackCompletion = { [self] todoEdited in

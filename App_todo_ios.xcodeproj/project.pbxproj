@@ -35,6 +35,9 @@
 		FB3A37C72B198E3D00C9FD29 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A37C62B198E3D00C9FD29 /* UIApplication+Extension.swift */; };
 		FB4ABF772B22BB8D0097D848 /* TodoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB4ABF762B22BB8D0097D848 /* TodoManager.swift */; };
 		FB4ABF7D2B22F3400097D848 /* TodoEntities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB4ABF7B2B22F3400097D848 /* TodoEntities.xcdatamodeld */; };
+		FB76E86C2FC013AD0061567F /* UIStoryboard+Extension.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76E86B2FC013AB0061567F /* UIStoryboard+Extension.swift.swift */; };
+		FB76E86E2FC015E80061567F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76E86D2FC015E60061567F /* SceneDelegate.swift */; };
+		FB76E8702FC03DC70061567F /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76E86F2FC03DC30061567F /* UIViewController+Navigation.swift */; };
 		FBA72C752B1DAC68002C7A14 /* AddTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */; };
 		FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */; };
 		FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C7A2B1DB868002C7A14 /* Todo.swift */; };
@@ -111,6 +114,9 @@
 		FB3A37C62B198E3D00C9FD29 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		FB4ABF762B22BB8D0097D848 /* TodoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoManager.swift; sourceTree = "<group>"; };
 		FB4ABF7C2B22F3400097D848 /* TodoEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TodoEntity.xcdatamodel; sourceTree = "<group>"; };
+		FB76E86B2FC013AB0061567F /* UIStoryboard+Extension.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift.swift"; sourceTree = "<group>"; };
+		FB76E86D2FC015E60061567F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FB76E86F2FC03DC30061567F /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTodo.storyboard; sourceTree = "<group>"; };
 		FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		FBA72C7A2B1DB868002C7A14 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 		FB3A37792B15D48600C9FD29 /* App_todo_ios */ = {
 			isa = PBXGroup;
 			children = (
+				FB76E86D2FC015E60061567F /* SceneDelegate.swift */,
 				FB3A37AA2B1825C300C9FD29 /* Sources */,
 				FB3A377A2B15D48600C9FD29 /* AppDelegate.swift */,
 				FB3A37832B15D48800C9FD29 /* Assets.xcassets */,
@@ -254,6 +261,7 @@
 		FB3A37AA2B1825C300C9FD29 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FB76E86A2FC013910061567F /* Utils */,
 				FB1F0EA02B2870C9009FA9DB /* Repository */,
 				FBA72C7C2B1DC78A002C7A14 /* Application */,
 				FBA72C782B1DB7FF002C7A14 /* Data */,
@@ -354,6 +362,15 @@
 				FBAA459C2B2BF64400C7D4D2 /* DialogManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		FB76E86A2FC013910061567F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FB76E86F2FC03DC30061567F /* UIViewController+Navigation.swift */,
+				FB76E86B2FC013AB0061567F /* UIStoryboard+Extension.swift.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		FBA72C732B1DAC49002C7A14 /* AddTodo */ = {
@@ -589,9 +606,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App_todo_ios/Pods-App_todo_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App_todo_ios/Pods-App_todo_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -650,9 +671,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App_todo_ios-App_todo_iosUITests/Pods-App_todo_ios-App_todo_iosUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-App_todo_ios-App_todo_iosUITests/Pods-App_todo_ios-App_todo_iosUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -669,12 +694,14 @@
 				FB1F0E982B28390C009FA9DB /* UIViewController+Extensions.swift in Sources */,
 				FBAF0AE12B20695A0076466C /* EditTodoViewModel.swift in Sources */,
 				FBAA459D2B2BF64400C7D4D2 /* DialogManager.swift in Sources */,
+				FB76E86C2FC013AD0061567F /* UIStoryboard+Extension.swift.swift in Sources */,
 				FB3A37BA2B1841B100C9FD29 /* CustomPrimaryTextField.swift in Sources */,
 				FBA72C822B1DD13B002C7A14 /* Time+Extension.swift in Sources */,
 				FB3A37BF2B18765A00C9FD29 /* SignUpViewController.swift in Sources */,
 				FBAF0AE32B216CB80076466C /* String+Extensions.swift in Sources */,
 				FB3A37C72B198E3D00C9FD29 /* UIApplication+Extension.swift in Sources */,
 				FB1F0EA22B287104009FA9DB /* LocalStorageRepository.swift in Sources */,
+				FB76E8702FC03DC70061567F /* UIViewController+Navigation.swift in Sources */,
 				FB3A377F2B15D48600C9FD29 /* SignInViewController.swift in Sources */,
 				FBAF0ADF2B205B180076466C /* EditTodoViewController.swift in Sources */,
 				FB1F0E9C2B285C50009FA9DB /* Storage.swift in Sources */,
@@ -694,6 +721,7 @@
 				FBAA45992B2B018400C7D4D2 /* CustomRedButton.swift in Sources */,
 				FB1F0E9A2B2842A3009FA9DB /* SignInViewModel.swift in Sources */,
 				FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */,
+				FB76E86E2FC015E80061567F /* SceneDelegate.swift in Sources */,
 				FB1F0E9F2B285DCA009FA9DB /* KeychainStorage.swift in Sources */,
 				FB1F0E962B281C1F009FA9DB /* SignUpViewModel.swift in Sources */,
 				FB1F0E942B280D70009FA9DB /* User.swift in Sources */,
@@ -876,6 +904,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App_todo_ios/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -903,6 +932,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App_todo_ios/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

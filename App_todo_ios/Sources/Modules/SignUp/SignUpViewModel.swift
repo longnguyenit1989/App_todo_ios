@@ -8,17 +8,40 @@
 import Foundation
 import MPInjector
 
-class SignUpViewModel {
-    
+enum SignUpState {
+    case success
+    case emptyFields
+    case invalidEmail
+    case passwordNotMatch
+    case error(String)
+}
+
+final class SignUpViewModel {
     @Inject var localStorageRepository: LocalStorageRepository
     @Inject var todoManager: TodoManager
     
-    func saveUser(_ fullName: String, _ email: String,_ password: String, callbackError: ((String) -> Void)? = nil, callbackSuccess: (() -> Void)? = nil) {
+    func signUp(fullName: String,
+                email: String,
+                password: String,
+                confirmPassword: String,
+                completion: @escaping (SignUpState) -> Void) {
+        if (fullName.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
+            completion(.emptyFields)
+            return
+        }
+        if (email.isValidEmail == false) {
+            completion(.invalidEmail)
+            return
+        }
+        if (password != confirmPassword) {
+            completion(.passwordNotMatch)
+            return
+        }
+        
         let user = User(fullName, email, password)
-        todoManager.saveUser(user, callbackError: { message in
-            callbackError?(message)
-        }, callbackSuccess: {
-            callbackSuccess?()
-        })
+        todoManager.saveUser(
+            user,
+            callbackError: { message in completion(.error(message))},
+            callbackSuccess: {completion(.success)})
     }
 }
