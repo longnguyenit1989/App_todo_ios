@@ -108,22 +108,14 @@ final class HomeViewController: BaseViewController {
         floaty.fabDelegate = self
         view.addSubview(floaty)
     }
-    
+        
     private func reloadSections() {
-        sections = [
-            createSection(
-                title: "Working",
-                status: .working
-            ),
-            createSection(
-                title: "Stuck",
-                status: .stuck
-            ),
-            createSection(
-                title: "Done",
-                status: .done
-            )
+        let rawSections = [
+            createSection(title: StatusTodo.working.rawValue, status: .working),
+            createSection(title: StatusTodo.stuck.rawValue, status: .stuck),
+            createSection(title: StatusTodo.done.rawValue, status: .done)
         ]
+        sections = rawSections.filter { !$0.todos.isEmpty }
         taskCollectionView.reloadData()
     }
     
@@ -148,19 +140,22 @@ final class HomeViewController: BaseViewController {
             name: "AddTodo",
             bundle: nil
         ).instantiate(AddTodoViewController.self)
-        
         vc.addTodoCallBackCompletion = {
             [weak self] todo in
             guard let self, let todo else {
                 return
             }
-            
             navigationController?.popViewController(
                 animated: true
             )
             homeViewModel.todoArray.append(todo)
             homeViewModel.saveTodo(todo)
             reloadSections()
+            
+            NotificationManager.shared.showNotification(
+                title: "Todo",
+                body: "You add todo: \(todo.title) success"
+            )
         }
         
         navigationController?.pushViewController(vc,animated: true)
@@ -191,6 +186,10 @@ final class HomeViewController: BaseViewController {
                 homeViewModel.todoArray[index] = editedTodo
                 homeViewModel.updateTodo(editedTodo)
             }
+            NotificationManager.shared.showNotification(
+                title: "Todo",
+                body: "You edit todo: \(editedTodo.title) success"
+            )
             
             reloadSections()
         }
@@ -212,6 +211,11 @@ final class HomeViewController: BaseViewController {
             }
             homeViewModel.deleteTodo(
                 deletedTodo
+            )
+            
+            NotificationManager.shared.showNotification(
+                title: "Todo",
+                body: "You delete todo: \(deletedTodo.title) success"
             )
             reloadSections()
         }

@@ -40,6 +40,7 @@
 		FB76E8702FC03DC70061567F /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76E86F2FC03DC30061567F /* UIViewController+Navigation.swift */; };
 		FB7B90EA2FC403F00022AD1D /* TaskSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7B90E92FC403EF0022AD1D /* TaskSectionHeaderView.swift */; };
 		FB7B90EC2FC404190022AD1D /* TaskSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB7B90EB2FC404190022AD1D /* TaskSectionHeaderView.xib */; };
+		FB7B90EE2FC437170022AD1D /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7B90ED2FC4370D0022AD1D /* NotificationManager.swift */; };
 		FBA72C752B1DAC68002C7A14 /* AddTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */; };
 		FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */; };
 		FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C7A2B1DB868002C7A14 /* Todo.swift */; };
@@ -121,6 +122,7 @@
 		FB76E86F2FC03DC30061567F /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		FB7B90E92FC403EF0022AD1D /* TaskSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSectionHeaderView.swift; sourceTree = "<group>"; };
 		FB7B90EB2FC404190022AD1D /* TaskSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskSectionHeaderView.xib; sourceTree = "<group>"; };
+		FB7B90ED2FC4370D0022AD1D /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTodo.storyboard; sourceTree = "<group>"; };
 		FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		FBA72C7A2B1DB868002C7A14 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 		FB4ABF752B22BB690097D848 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FB7B90ED2FC4370D0022AD1D /* NotificationManager.swift */,
 				FB4ABF762B22BB8D0097D848 /* TodoManager.swift */,
 				FBAA459C2B2BF64400C7D4D2 /* DialogManager.swift */,
 			);
@@ -736,6 +739,7 @@
 				FB4ABF7D2B22F3400097D848 /* TodoEntities.xcdatamodeld in Sources */,
 				FBAA45992B2B018400C7D4D2 /* CustomRedButton.swift in Sources */,
 				FB1F0E9A2B2842A3009FA9DB /* SignInViewModel.swift in Sources */,
+				FB7B90EE2FC437170022AD1D /* NotificationManager.swift in Sources */,
 				FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */,
 				FB76E86E2FC015E80061567F /* SceneDelegate.swift in Sources */,
 				FB1F0E9F2B285DCA009FA9DB /* KeychainStorage.swift in Sources */,
