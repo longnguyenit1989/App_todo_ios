@@ -35,12 +35,35 @@ class SettingViewController: BaseViewController {
     }
     
     @objc func signOutButtonTapped() {
-        dialogManager.showDialog(type: DialogType.option, title: "LOGOUT",message: "Do you want to logout ?", yesButtonTitle: "Logout", yesCallback: {
-            self.settingViewModel.clearUser()
-            
-            let signInVC = UIStoryboard(name: "SignIn", bundle: .main).instantiateViewController(withIdentifier: "NavigationSignInViewController")
-            UIApplication.shared.currentUIWindow()?.rootViewController = signInVC
-            UIApplication.shared.currentUIWindow()?.makeKeyAndVisible()
-        })
+        dialogManager.showDialog(
+            type: .option,
+            title: "Logout",
+            message: "Do you want to logout?",
+            yesButtonTitle: "Logout",
+            yesCallback: { [weak self] in
+                guard let self else { return }
+                
+                self.settingViewModel.clearUser()
+                
+                DispatchQueue.main.async {
+                    let storyboard = UIStoryboard(name: "SignIn", bundle: .main)
+                    let vc = storyboard.instantiateViewController(
+                        withIdentifier: "NavigationSignInViewController"
+                    )
+
+                    if let window = UIApplication.shared.currentUIWindow() {
+                        window.rootViewController = vc
+                        window.makeKeyAndVisible()
+
+                        UIView.transition(
+                            with: window,
+                            duration: 0.3,
+                            options: .transitionCrossDissolve,
+                            animations: nil
+                        )
+                    }
+                }
+            }
+        )
     }
 }

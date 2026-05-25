@@ -69,10 +69,10 @@ class SignInViewController: BaseViewController {
     }
     
     private func toHomeAndSetRootViewcontroller() {
-        let homeVC = UIStoryboard(name: "Home", bundle: nil).instantiate(HomeViewController.self)
-        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-           let window = scene.windows.first {
-            window.rootViewController = homeVC
+        let homeVC = UIStoryboard(name: "Home", bundle: .main).instantiateViewController(withIdentifier: "HomeViewController")
+        let nav = UINavigationController(rootViewController: homeVC)
+        if let window = UIApplication.shared.currentUIWindow() {
+            window.rootViewController = nav
             window.makeKeyAndVisible()
         }
     }
