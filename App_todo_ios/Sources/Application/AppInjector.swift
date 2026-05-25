@@ -7,7 +7,7 @@
 
 import MPInjector
 
-extension MPInjector: Registering {
+extension MPInjector: @retroactive Registering {
     public func registerService() {
         // MARK: Viewmodel
         registerFactory { AddTodoViewModel() }

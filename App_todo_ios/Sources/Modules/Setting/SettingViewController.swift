@@ -35,7 +35,7 @@ class SettingViewController: BaseViewController {
     }
     
     @objc func signOutButtonTapped() {
-        dialogManager.showDialog(typeDialog: TypeDialog.OPTION_DIALOG, title: "LOGOUT DIALOG",message: "Do you want to logout ?", yesButtonLabel: "Logout", yesCallback: {
+        dialogManager.showDialog(type: DialogType.option, title: "LOGOUT",message: "Do you want to logout ?", yesButtonTitle: "Logout", yesCallback: {
             self.settingViewModel.clearUser()
             
             let signInVC = UIStoryboard(name: "SignIn", bundle: .main).instantiateViewController(withIdentifier: "NavigationSignInViewController")

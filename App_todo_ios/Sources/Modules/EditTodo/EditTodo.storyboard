@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24127" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24063"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VuV-RD-06X">
-                                <rect key="frame" x="28" y="59" width="337" height="759"/>
+                                <rect key="frame" x="28" y="118" width="337" height="666"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M90-Rv-bVW" userLabel="Title Label">
                                         <rect key="frame" x="0.0" y="30" width="337" height="30"/>
@@ -90,15 +91,33 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aW6-dR-8hO" userLabel="Delete Button" customClass="CustomRedButton" customModule="App_todo_ios" customModuleProvider="target">
+                                        <rect key="frame" x="-1" y="401" width="337" height="48"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="Pj5-HH-EQY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" title="Delete">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="Iiv-VN-KGm" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="4WH-Gd-aYY"/>
+                                    <constraint firstItem="aW6-dR-8hO" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" constant="-1" id="6te-si-2mC"/>
                                     <constraint firstAttribute="trailing" secondItem="Iiv-VN-KGm" secondAttribute="trailing" id="7Cg-Yp-zSA"/>
                                     <constraint firstItem="ViQ-b3-MCY" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="EoQ-6F-8e5"/>
                                     <constraint firstItem="teY-cS-aOn" firstAttribute="top" secondItem="Jo6-Xf-JFa" secondAttribute="bottom" constant="10" id="IDt-jh-yHh"/>
                                     <constraint firstItem="7uS-v7-Owh" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="ILl-7O-BGH"/>
                                     <constraint firstAttribute="trailing" secondItem="7uS-v7-Owh" secondAttribute="trailing" id="LvH-zA-F7u"/>
+                                    <constraint firstItem="aW6-dR-8hO" firstAttribute="top" secondItem="Iiv-VN-KGm" secondAttribute="bottom" constant="17" id="NR0-vk-HUZ"/>
                                     <constraint firstItem="M90-Rv-bVW" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="O67-gg-JHp"/>
                                     <constraint firstAttribute="trailing" secondItem="ViQ-b3-MCY" secondAttribute="trailing" id="PN2-kX-cTP"/>
                                     <constraint firstItem="M90-Rv-bVW" firstAttribute="top" secondItem="VuV-RD-06X" secondAttribute="top" constant="30" id="TBM-UY-wYP"/>
@@ -108,6 +127,7 @@
                                     <constraint firstItem="teY-cS-aOn" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="ezG-Hr-Ntb"/>
                                     <constraint firstItem="ViQ-b3-MCY" firstAttribute="top" secondItem="M90-Rv-bVW" secondAttribute="bottom" constant="5" id="fG2-kv-lFS"/>
                                     <constraint firstAttribute="trailing" secondItem="teY-cS-aOn" secondAttribute="trailing" id="fwE-ND-Ubu"/>
+                                    <constraint firstAttribute="trailing" secondItem="aW6-dR-8hO" secondAttribute="trailing" constant="1" id="kal-jv-414"/>
                                     <constraint firstAttribute="trailing" secondItem="Jo6-Xf-JFa" secondAttribute="trailing" id="lif-GU-RKD"/>
                                     <constraint firstItem="Kcb-X8-PN9" firstAttribute="leading" secondItem="VuV-RD-06X" secondAttribute="leading" id="r1W-3c-Ym2"/>
                                     <constraint firstAttribute="trailing" secondItem="Kcb-X8-PN9" secondAttribute="trailing" id="r3U-jZ-AUJ"/>
@@ -129,6 +149,7 @@
                     <connections>
                         <outlet property="chooseStatusLabel" destination="Kcb-X8-PN9" id="Sh4-bJ-mXT"/>
                         <outlet property="contentTextField" destination="Jo6-Xf-JFa" id="HCb-TG-nej"/>
+                        <outlet property="deleteButton" destination="aW6-dR-8hO" id="WhX-eL-krc"/>
                         <outlet property="editButton" destination="Iiv-VN-KGm" id="smh-Xt-jne"/>
                         <outlet property="titleTextField" destination="ViQ-b3-MCY" id="lcQ-gP-MJU"/>
                     </connections>
@@ -146,7 +167,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

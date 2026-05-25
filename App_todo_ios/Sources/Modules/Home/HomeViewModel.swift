@@ -26,6 +26,10 @@ class HomeViewModel {
         todoManager.updateTodo(updatedTodo)
     }
     
+    func deleteTodo(_ deleteTodo: Todo) {
+        todoManager.deleteTodo(id: deleteTodo.id)
+    }
+    
     func hasTodo() -> Bool {
         return todoArray.count > 0
     }

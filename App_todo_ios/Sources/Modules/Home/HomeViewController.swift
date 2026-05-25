@@ -139,6 +139,21 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 }
             }
         }
+        editTodoVC.deleteTodoCallBackCompletion = { [weak self] todoDeleted in
+            guard let self = self,
+                  let todoDeleted = todoDeleted else {
+                return
+            }
+            for (index, todo) in self.homeViewModel.todoArray.enumerated() {
+                if todo.id == todoDeleted.id {
+                    self.homeViewModel.todoArray.remove(at: index)
+                    self.homeViewModel.deleteTodo(todoDeleted)
+                    let indexPath = IndexPath(item: index, section: 0)
+                    self.taskCollectionView.deleteItems(at: [indexPath])
+                    break
+                }
+            }
+        }
         
         self.navigationController?.pushViewController(editTodoVC, animated: true)
     }

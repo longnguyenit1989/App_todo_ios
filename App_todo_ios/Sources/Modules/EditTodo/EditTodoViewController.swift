@@ -12,26 +12,30 @@ class EditTodoViewController: BaseViewController {
     @IBOutlet weak var titleTextField: CustomPrimaryTextField!
     @IBOutlet weak var contentTextField: CustomPrimaryTextField!
     @IBOutlet weak var editButton: CustomPrimaryButtton!
+    @IBOutlet weak var deleteButton: CustomPrimaryButtton!
     @IBOutlet weak var chooseStatusLabel: UILabel!
     
     @Inject var editTodoViewModel: EditTodoViewModel
+    @Inject var dialogManager: DialogManager
     
     var statusPickerView: UIPickerView!
     var selectedTodo: Todo?
     var editTodoCallBackCompletion: ((Todo?) -> Void)?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
-    }
+    var deleteTodoCallBackCompletion: ((Todo?) -> Void)?
     
     override func setupUi() {
         setNavigationBar(title: "EDIT TODO")
         binDataSelectedTodo()
         setStatusPickerView()
+        setupButton()
     }
     
-    func binDataSelectedTodo() {
+    private func setupButton() {
+        editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
+        deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+    }
+    
+    private func binDataSelectedTodo() {
         editTodoViewModel.todoEdited = selectedTodo
         
         titleTextField.text = self.editTodoViewModel.todoEdited?.title
@@ -40,7 +44,7 @@ class EditTodoViewController: BaseViewController {
         chooseStatusLabel.backgroundColor = self.editTodoViewModel.todoEdited?.status.statusColor
     }
     
-    func setStatusPickerView() {
+    private func setStatusPickerView() {
         let chooseStatusLabelTapGesture = UITapGestureRecognizer(target: self, action: #selector(chooseStatusLabelTapped))
         chooseStatusLabel.isUserInteractionEnabled = true
         chooseStatusLabel.addGestureRecognizer(chooseStatusLabelTapGesture)
@@ -60,11 +64,27 @@ class EditTodoViewController: BaseViewController {
         self.view.addSubview(statusPickerView)
     }
     
-    @objc func chooseStatusLabelTapped() {
+    @objc private func deleteButtonTapped() {
+        dialogManager.showDialog(
+            type: .option,
+            title: "Delete",
+            message: "Are you sure to delete this todo?",
+            yesButtonTitle: "Delete",
+            yesCallback: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                self.deleteTodoCallBackCompletion?(self.selectedTodo)
+                back()
+            }
+        )
+    }
+    
+    @objc private func chooseStatusLabelTapped() {
         statusPickerView.isHidden = false
     }
     
-    @objc func editButtonTapped() {
+    @objc private func editButtonTapped() {
         let titleEdited = titleTextField.text ?? ""
         let contentEdited = contentTextField.text ?? ""
         editTodoViewModel.editTodo(title: titleEdited, content: contentEdited)
