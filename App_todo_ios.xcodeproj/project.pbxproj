@@ -38,6 +38,8 @@
 		FB76E86C2FC013AD0061567F /* UIStoryboard+Extension.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76E86B2FC013AB0061567F /* UIStoryboard+Extension.swift.swift */; };
 		FB76E86E2FC015E80061567F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76E86D2FC015E60061567F /* SceneDelegate.swift */; };
 		FB76E8702FC03DC70061567F /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB76E86F2FC03DC30061567F /* UIViewController+Navigation.swift */; };
+		FB7B90EA2FC403F00022AD1D /* TaskSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7B90E92FC403EF0022AD1D /* TaskSectionHeaderView.swift */; };
+		FB7B90EC2FC404190022AD1D /* TaskSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB7B90EB2FC404190022AD1D /* TaskSectionHeaderView.xib */; };
 		FBA72C752B1DAC68002C7A14 /* AddTodo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */; };
 		FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */; };
 		FBA72C7B2B1DB868002C7A14 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA72C7A2B1DB868002C7A14 /* Todo.swift */; };
@@ -117,6 +119,8 @@
 		FB76E86B2FC013AB0061567F /* UIStoryboard+Extension.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift.swift"; sourceTree = "<group>"; };
 		FB76E86D2FC015E60061567F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FB76E86F2FC03DC30061567F /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
+		FB7B90E92FC403EF0022AD1D /* TaskSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSectionHeaderView.swift; sourceTree = "<group>"; };
+		FB7B90EB2FC404190022AD1D /* TaskSectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskSectionHeaderView.xib; sourceTree = "<group>"; };
 		FBA72C742B1DAC68002C7A14 /* AddTodo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTodo.storyboard; sourceTree = "<group>"; };
 		FBA72C762B1DAC9F002C7A14 /* AddTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoViewController.swift; sourceTree = "<group>"; };
 		FBA72C7A2B1DB868002C7A14 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 		FB3A37C02B1984EF00C9FD29 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				FB7B90E82FC403840022AD1D /* TaskSectionHeaderView */,
 				FBA72C852B1ED165002C7A14 /* TaskCollectionViewCell */,
 				FB3A37C12B19850000C9FD29 /* Home.storyboard */,
 				FB3A37C32B19851D00C9FD29 /* HomeViewController.swift */,
@@ -371,6 +376,15 @@
 				FB76E86B2FC013AB0061567F /* UIStoryboard+Extension.swift.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		FB7B90E82FC403840022AD1D /* TaskSectionHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				FB7B90E92FC403EF0022AD1D /* TaskSectionHeaderView.swift */,
+				FB7B90EB2FC404190022AD1D /* TaskSectionHeaderView.xib */,
+			);
+			path = TaskSectionHeaderView;
 			sourceTree = "<group>";
 		};
 		FBA72C732B1DAC49002C7A14 /* AddTodo */ = {
@@ -551,6 +565,7 @@
 				FB3A37C22B19850000C9FD29 /* Home.storyboard in Resources */,
 				FBA72C752B1DAC68002C7A14 /* AddTodo.storyboard in Resources */,
 				FB3A37BD2B18713900C9FD29 /* SignUp.storyboard in Resources */,
+				FB7B90EC2FC404190022AD1D /* TaskSectionHeaderView.xib in Resources */,
 				FBA72C892B1ED1A0002C7A14 /* TaskTodoCellCollectionViewCell.xib in Resources */,
 				FBAA45932B2AB93E00C7D4D2 /* Setting.storyboard in Resources */,
 				FB3A37842B15D48800C9FD29 /* Assets.xcassets in Resources */,
@@ -709,6 +724,7 @@
 				FBAA45972B2AB98500C7D4D2 /* SettingViewModel.swift in Sources */,
 				FBA72C772B1DAC9F002C7A14 /* AddTodoViewController.swift in Sources */,
 				FB3A37B82B183E3200C9FD29 /* CustomPrimaryButtton.swift in Sources */,
+				FB7B90EA2FC403F00022AD1D /* TaskSectionHeaderView.swift in Sources */,
 				FBA72C7E2B1DC7CC002C7A14 /* AppInjector.swift in Sources */,
 				FBA72C842B1DD216002C7A14 /* HomeViewModel.swift in Sources */,
 				FB4ABF772B22BB8D0097D848 /* TodoManager.swift in Sources */,
