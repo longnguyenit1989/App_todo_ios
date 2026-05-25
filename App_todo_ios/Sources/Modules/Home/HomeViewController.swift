@@ -22,14 +22,48 @@ final class HomeViewController: BaseViewController {
     
     private var sections: [TodoSection] = []
     
+    private static let settingTitle = "Setting"
+    private static let IdentifyPlantTitle = "Identify Plant"
+    private static let plantDiaryTitle = "Plant's diary"
+    private static let plantNotificationTitle = "Plant's notifications"
+    private static let removePlantTitle = "Remove plant"
+    
     override func setupUi() {
         setNavigationBar(title: "HOME")
+        setPopupMenuNavigationBar()
         setupCollectionView()
         setupFloatingButton()
         reloadSections()
         headerView.isHidden = !homeViewModel.hasTodo()
     }
+    
+    private func setPopupMenuNavigationBar() {
+        let menuHandler: UIActionHandler = { action in
+            switch action.title {
+            case HomeViewController.settingTitle:
+                self.toSettingScreen()
+            default:
+                self.showToast(message: "Function not available")
+            }
+        }
         
+        let barButtonMenu = UIMenu(title: "", children: [
+            UIAction(title: NSLocalizedString(HomeViewController.settingTitle, comment: ""), image: UIImage(systemName: "gear") ,handler: menuHandler),
+            UIAction(title: NSLocalizedString(HomeViewController.IdentifyPlantTitle, comment: ""), image: UIImage(systemName: "viewfinder"), handler: menuHandler),
+            UIAction(title: NSLocalizedString(HomeViewController.plantDiaryTitle, comment: ""), image: UIImage(systemName: "books.vertical"), handler: menuHandler),
+            UIAction(title: NSLocalizedString(HomeViewController.plantNotificationTitle, comment: ""), image: UIImage(systemName: "bell"), handler: menuHandler),
+            UIAction(title: NSLocalizedString(HomeViewController.removePlantTitle, comment: ""), image: UIImage(systemName: "trash"), handler: menuHandler)
+        ])
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Manage", style: .plain, target: self, action: nil)
+        self.navigationItem.rightBarButtonItem?.menu = barButtonMenu
+    }
+    
+    private func toSettingScreen() {
+        let settingVC = UIStoryboard(name: "Setting", bundle: .main).instantiateViewController(withIdentifier: "SettingViewController")
+        navigationController?.pushViewController(settingVC, animated: true)
+    }
+    
     private func setupCollectionView() {
         taskCollectionView.delegate = self
         taskCollectionView.dataSource = self
@@ -38,8 +72,7 @@ final class HomeViewController: BaseViewController {
                 nibName: "TaskTodoCellCollectionViewCell",
                 bundle: nil
             ),
-            forCellWithReuseIdentifier:
-                "TaskTodoCellCollectionViewCell"
+            forCellWithReuseIdentifier: "TaskTodoCellCollectionViewCell"
         )
         
         taskCollectionView.register(
@@ -47,12 +80,10 @@ final class HomeViewController: BaseViewController {
                 nibName: "TaskSectionHeaderView",
                 bundle: nil
             ),
-            forSupplementaryViewOfKind:
-                UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier:
-                "TaskSectionHeaderView"
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "TaskSectionHeaderView"
         )
-                
+        
         let layout = UICollectionViewFlowLayout()
         
         layout.itemSize = CGSize(
@@ -62,7 +93,7 @@ final class HomeViewController: BaseViewController {
         
         layout.headerReferenceSize = CGSize(
             width: UIScreen.main.bounds.width,
-            height: 40
+            height: 45
         )
         
         layout.minimumLineSpacing = 8
@@ -111,7 +142,7 @@ final class HomeViewController: BaseViewController {
             todos: todos
         )
     }
-        
+    
     private func addTodoTapped() {
         let vc = UIStoryboard(
             name: "AddTodo",
@@ -120,9 +151,7 @@ final class HomeViewController: BaseViewController {
         
         vc.addTodoCallBackCompletion = {
             [weak self] todo in
-            
-            guard let self,
-                  let todo else {
+            guard let self, let todo else {
                 return
             }
             
@@ -134,10 +163,7 @@ final class HomeViewController: BaseViewController {
             reloadSections()
         }
         
-        navigationController?.pushViewController(
-            vc,
-            animated: true
-        )
+        navigationController?.pushViewController(vc,animated: true)
     }
     
     private func openEditTodo(todo: Todo) {
@@ -168,7 +194,7 @@ final class HomeViewController: BaseViewController {
             
             reloadSections()
         }
-                
+        
         vc.deleteTodoCallBackCompletion = {
             [weak self] deletedTodo in
             
@@ -198,53 +224,31 @@ final class HomeViewController: BaseViewController {
 }
 
 extension HomeViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(
-        in collectionView: UICollectionView
-    ) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         sections.count
     }
     
-    func collectionView(
-        _ collectionView: UICollectionView,
-        numberOfItemsInSection section: Int
-    ) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         sections[section].todos.count
     }
     
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaskTodoCellCollectionViewCell",for: indexPath) as! TaskTodoCellCollectionViewCell
         
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier:
-                "TaskTodoCellCollectionViewCell",
-            for: indexPath
-        ) as! TaskTodoCellCollectionViewCell
-        
-        let todo = sections[indexPath.section]
-            .todos[indexPath.row]
-        
+        let todo = sections[indexPath.section].todos[indexPath.row]
         cell.titlePaddingLabel.text = todo.title
         cell.statusLabel.text = todo.status.rawValue
         cell.statusLabel.backgroundColor = todo.status.statusColor
         return cell
     }
     
-    func collectionView(
-        _ collectionView: UICollectionView,
-        viewForSupplementaryElementOfKind kind: String,
-        at indexPath: IndexPath
-    ) -> UICollectionReusableView {
-        
-        let header = collectionView
-            .dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier:
-                    "TaskSectionHeaderView",
-                for: indexPath
-            ) as! TaskSectionHeaderView
+    func collectionView(_ collectionView: UICollectionView,viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier:
+                "TaskSectionHeaderView",
+            for: indexPath
+        ) as! TaskSectionHeaderView
         
         let section = sections[indexPath.section]
         header.titleLabel.text = section.title
@@ -254,10 +258,7 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        didSelectItemAt indexPath: IndexPath
-    ) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let todo = sections[indexPath.section].todos[indexPath.row]
         openEditTodo(todo: todo)
     }

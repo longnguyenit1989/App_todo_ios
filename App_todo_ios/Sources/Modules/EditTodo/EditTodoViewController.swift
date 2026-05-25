@@ -42,6 +42,8 @@ class EditTodoViewController: BaseViewController {
         contentTextField.text = self.editTodoViewModel.todoEdited?.content
         chooseStatusLabel.text = self.editTodoViewModel.todoEdited?.status.rawValue
         chooseStatusLabel.backgroundColor = self.editTodoViewModel.todoEdited?.status.statusColor
+        chooseStatusLabel.layer.cornerRadius = 8
+        chooseStatusLabel.clipsToBounds = true
     }
     
     private func setStatusPickerView() {
@@ -75,7 +77,7 @@ class EditTodoViewController: BaseViewController {
                     return
                 }
                 self.deleteTodoCallBackCompletion?(self.selectedTodo)
-                back()
+                self.back()
             }
         )
     }
