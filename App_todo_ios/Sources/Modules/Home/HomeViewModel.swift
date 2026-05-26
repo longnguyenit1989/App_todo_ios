@@ -15,19 +15,32 @@ class HomeViewModel {
     @Inject var localStorageRepository: LocalStorageRepository
     
     init() {
-        todoArray = todoManager.fetchTodos(email: localStorageRepository.getUser()?.email ?? "")
+        fetchTodos()
     }
     
     func saveTodo(_ todo: Todo) {
         todoManager.saveTodo(todo)
+        todoArray.append(todo)
     }
     
     func updateTodo(_ updatedTodo: Todo) {
         todoManager.updateTodo(updatedTodo)
+        if let index = todoArray.firstIndex(
+            where: { $0.id == updatedTodo.id }
+        ) {
+            todoArray[index] = updatedTodo
+        }
     }
     
-    func deleteTodo(_ deleteTodo: Todo) {
-        todoManager.deleteTodo(id: deleteTodo.id)
+    func deleteTodo(_ deletedTodo: Todo) {
+        todoManager.deleteTodo(id: deletedTodo.id)
+        todoArray.removeAll {
+            $0.id == deletedTodo.id
+        }
+    }
+    
+    func fetchTodos() {
+        todoArray = todoManager.fetchTodos(email: localStorageRepository.getUser()?.email ?? "")
     }
     
     func hasTodo() -> Bool {

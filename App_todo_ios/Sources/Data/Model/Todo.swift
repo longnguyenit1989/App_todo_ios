@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Todo {
+struct Todo: Hashable {
     var id: Int64
     var title: String
     var content: String
