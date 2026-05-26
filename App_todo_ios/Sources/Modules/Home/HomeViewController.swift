@@ -60,8 +60,7 @@ final class HomeViewController: BaseViewController {
     }
     
     private func toSettingScreen() {
-        let vc = UIStoryboard(name: "Setting", bundle: .main)
-            .instantiateViewController(withIdentifier: "SettingViewController")
+        let vc = UIStoryboard(name: "Setting", bundle: .main).instantiate(SettingViewController.self)
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -146,8 +145,7 @@ final class HomeViewController: BaseViewController {
     }
     
     private func addTodoTapped() {
-        let vc = UIStoryboard(name: "AddTodo", bundle: nil)
-            .instantiateViewController(withIdentifier: "AddTodoViewController") as! AddTodoViewController
+        let vc = UIStoryboard(name: "AddTodo", bundle: nil).instantiate(AddTodoViewController.self)
         vc.addTodoCallBackCompletion = { [weak self] todo in
             guard let self, let todo else { return }
             self.homeViewModel.saveTodo(todo)
@@ -158,8 +156,7 @@ final class HomeViewController: BaseViewController {
     }
     
     private func openEditTodo(todo: Todo) {
-        let vc = UIStoryboard(name: "EditTodo", bundle: nil)
-            .instantiateViewController(withIdentifier: "EditTodoViewController") as! EditTodoViewController
+        let vc = UIStoryboard(name: "EditTodo", bundle: nil).instantiate(EditTodoViewController.self)
         vc.selectedTodo = todo
         vc.editTodoCallBackCompletion = { [weak self] editedTodo in
             guard let self, let editedTodo else { return }
